@@ -29,7 +29,7 @@
    - [Desarrollo de interfaces (Carmen Campos Fernández)](#desarrollo-de-interfaces--carmen-campos-fernández)
    - [Servidores y APIs (Juan Antonio García Gómez)](#servidores-y-apis--juan-antonio-garcía-gómez)
    - [Sistemas de gestión empresarial (Miguel Ángel Ronda Carracao)](#sistemas-de-gestión-empresarial--miguel-ángel-ronda-carracao)
-   - [Empresa e Iniciativa Emprendedora II — no aplica](#empresa-e-iniciativa-emprendedora-ii--no-aplica)
+   - [Empresa e Iniciativa Emprendedora II (Rosa Carmen Alcázar Rosal)](#empresa-e-iniciativa-emprendedora-ii--rosa-carmen-alcázar-rosal)
 5. [Repositorios de código](#repositorios-de-código)
 6. [Despliegue y entornos](#despliegue-y-entornos)
 7. [Documentación unificada (Confluence)](#documentación-unificada-confluence)
@@ -58,7 +58,7 @@ Profesorado evaluador (5 de junio de 2026):
 - Hormigo Ramírez, David (PSP / PMDM)
 - Campos Fernández, Carmen (DI)
 - Ronda Carracao, Miguel Ángel (SGE)
-- Alcázar Rosal, Rosa Carmen (EIE — no aplica al proyecto)
+- Alcázar Rosal, Rosa Carmen (EIE)
 
 ---
 
@@ -87,18 +87,48 @@ Profesorado evaluador (5 de junio de 2026):
 
 ## Capturas y vistas del producto
 
-> ⚠️ **Pendiente:** subir capturas reales al directorio `readme/img/` y reemplazar los placeholders. (Ver [Información que falta por aportar](#información-que-falta-por-aportar).)
+### Identidad visual / brand assets
 
-| Vista | Captura |
-|-------|---------|
-| Landing / login (web) | `readme/img/01-landing.png` *(pendiente)* |
-| Dashboard SUPERADMIN (web) | `readme/img/02-dashboard.png` *(pendiente)* |
-| Gestión de centros / máquinas (web) | `readme/img/03-centros.png` *(pendiente)* |
-| Suscripciones y facturación (web) | `readme/img/04-suscripciones.png` *(pendiente)* |
-| Lector / generador de QR (web + móvil) | `readme/img/05-qr.png` *(pendiente)* |
-| Chat con IA y planes (móvil) | `readme/img/06-ai-chat.png` *(pendiente)* |
-| Dashboard Power BI (analytics) | `readme/img/07-powerbi.png` *(pendiente)* |
-| Diagrama de arquitectura | `readme/img/08-arquitectura.png` *(pendiente)* |
+Activos disponibles directamente en los repositorios de cada capa:
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="../front/public/Logo.png" alt="Logo Meta Force (web)" width="160" /><br/>
+      <sub><b>Logo principal — web</b><br/><code>front/public/Logo.png</code></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="../kotlin/app/src/main/res/drawable/app_logo.png" alt="Logo Meta Force (Android)" width="160" /><br/>
+      <sub><b>Logo app Android</b><br/><code>kotlin/app/src/main/res/drawable/app_logo.png</code></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="../kotlin/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="Launcher icon Android" width="96" /><br/>
+      <sub><b>Launcher icon Android</b><br/><code>kotlin/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png</code></sub>
+    </td>
+  </tr>
+</table>
+
+> El logo es el mismo *wordmark* en ambas plataformas (mancuerna con la **M** estilizada en gradiente azul → cian), lo que garantiza coherencia visual entre la app web y la móvil.
+
+### Capturas de pantalla del producto
+
+Las capturas en vivo del producto se almacenan en [`readme/img/`](./img/) y se incrustarán a continuación. Los íconos / favicon / Compodoc ya existen en los submódulos y no requieren regenerarse.
+
+| # | Vista | Origen | Estado |
+|---|-------|--------|--------|
+| 1 | Landing / login (web) | `readme/img/01-landing.png` | ⏳ pendiente |
+| 2 | Dashboard SUPERADMIN (web) | `readme/img/02-dashboard.png` | ⏳ pendiente |
+| 3 | Gestión de centros / máquinas (web) | `readme/img/03-centros.png` | ⏳ pendiente |
+| 4 | Suscripciones y facturación (web) | `readme/img/04-suscripciones.png` | ⏳ pendiente |
+| 5 | Lector / generador de QR (web + móvil) | `readme/img/05-qr.png` | ⏳ pendiente |
+| 6 | Chat con IA y planes (móvil) | `readme/img/06-ai-chat.png` | ⏳ pendiente |
+| 7 | Dashboard Power BI (analytics) | `readme/img/07-powerbi.png` | ⏳ pendiente |
+| 8 | Diagrama de arquitectura | `readme/img/08-arquitectura.png` | ⏳ pendiente |
+| 9 | Lean Canvas (EIE) | `readme/img/09-lean-canvas.png` | ⏳ pendiente |
+| — | Compodoc (front) | [`front/documentation/`](../front/documentation/) (`index.html`, `coverage.html`, `modules.html`, `routes.html`) | ✅ generado en repo |
+| — | Favicon web | [`front/public/favicon.ico`](../front/public/favicon.ico) | ✅ en repo |
+
+> ⚠️ **Pendiente:** subir las capturas reales 1–9 al directorio `readme/img/`. (Ver [Información que falta por aportar](#información-que-falta-por-aportar).)
 
 ---
 
@@ -133,6 +163,10 @@ Subapartado obligatorio por cada módulo (con objetivos cubiertos, evidencias en
 ---
 
 ### Programación multimedia y dispositivos móviles — David Hormigo Ramírez
+
+<p align="left">
+  <img src="../kotlin/app/src/main/res/drawable/app_logo.png" alt="Meta Force Android" width="120" />
+</p>
 
 **Objetivos del módulo cubiertos**
 
@@ -220,7 +254,7 @@ Subapartado obligatorio por cada módulo (con objetivos cubiertos, evidencias en
 - **Seguridad HTTP**: Helmet, CORS por origen, *rate-limit*, validación Zod en cada endpoint, hashing bcrypt para legacy.
 - **Auditoría de seguridad OWASP ZAP** documentada (`back/docs/ZAP_RUNBOOK_2026-05.md`, `back/docs/security-audit-2026-05.md`, contexto en `back/zap/`).
 - **Despliegue Vercel** para Angular (`https://meta-force-psi.vercel.app/`) y Supabase Cloud para backend.
-- **Versionado** con Git, GitHub, submódulos y CI/CD.
+- **Versionado** con Git + GitHub (un repositorio por capa) y CI/CD.
 
 **Evidencias en el repo**
 
@@ -262,9 +296,26 @@ Subapartado obligatorio por cada módulo (con objetivos cubiertos, evidencias en
 
 ---
 
-### Empresa e Iniciativa Emprendedora II — no aplica
+### Empresa e Iniciativa Emprendedora II — Rosa Carmen Alcázar Rosal
 
-> **No procede entregable** para EIE II en este proyecto, según lo confirmado por el equipo (no se ha cursado el módulo con la profesora **Rosa Carmen Alcázar Rosal** durante este curso para este grupo).
+**Objetivos del módulo cubiertos**
+
+- **Modelo de negocio formalizado con Lean Canvas** para Meta Force como producto SaaS B2C dirigido a centros deportivos y a sus socios.
+- Identificación de **segmentos de clientes** (gimnasios independientes, cadenas pequeñas/medianas, usuarios finales), **propuesta de valor diferencial** (control de acceso QR + IA + analítica + multiplataforma web/Android), **canales** (web, app, comercial directo), **flujo de ingresos** (suscripciones mensuales/anuales por centro y add-ons IA) y **estructura de costes** (Supabase, Vercel, Resend, Groq, Cloudinary).
+- **Métricas clave (KPIs)** alineadas con la solución técnica: usuarios activos, accesos QR/día, ratio de conversión a plan de pago, MRR, churn — todas observables desde el **dashboard Power BI Superadmin** del módulo SGE.
+- **Ventaja injusta**: integración nativa de IA conversacional y dashboard analítico listo para uso del centro desde el primer día, frente a competidores que requieren contratar BI externo.
+- Reflexión sobre **viabilidad económica, legal y de mercado** del producto: tratamiento de datos personales (LOPDGDD/RGPD), cumplimiento mediante RLS + JWT, auditoría OWASP ZAP documentada y emisión de facturas con numeración fiscal estable (`issuer_settings`, `invoices`).
+
+**Evidencias en el repo**
+
+- 📄 **Lean Canvas:** `readme/docs/Meta-Force_Lean_Canvas.pdf` *(pendiente de subir)* — versión consolidada del canvas completado en clase.
+- 📄 Resumen de modelo de negocio embebido en el PDF de Confluence (`readme/docs/Meta-Force_Confluence.pdf`, pendiente).
+- 🔗 Trazabilidad con la implementación real: el **catálogo de planes y precios** (`subscription_plans`, `plan_durations`, `plan_prices`), el **flujo de facturación automatizado** (`invoice-pdf`, `subscription-email`, bucket `invoices`) y los **KPIs** del Power BI son la materialización técnica del Lean Canvas.
+
+**Limitaciones / líneas futuras**
+
+- Validación con clientes reales (entrevistas a gimnasios locales) — pendiente para un siguiente sprint comercial.
+- Plan financiero a 3 años con escenarios *best / base / worst case* a partir de los datos reales del dashboard Power BI.
 
 ---
 
@@ -272,11 +323,12 @@ Subapartado obligatorio por cada módulo (con objetivos cubiertos, evidencias en
 
 | Capa | Repositorio | Tecnologías |
 |------|-------------|-------------|
-| Repositorio guía / wrapper con submódulos | [`Mariogarluu/Meta-Force-App`](https://github.com/Mariogarluu/Meta-Force-App) *(este repo)* | Git submodules + documentación |
 | Frontend web | [`Mariogarluu/Meta_Force_front`](https://github.com/Mariogarluu/Meta_Force_front) | Angular 19 · TypeScript 5.7 · Tailwind 3.4 · ngx-translate · Supabase JS |
 | Backend (Supabase + histórico Express) | [`Mariogarluu/Meta_Force_back`](https://github.com/Mariogarluu/Meta_Force_back) | Supabase (PostgreSQL · Edge Functions Deno · Auth · Storage) · Prisma · Express 5 |
 | App Android | [`Mariogarluu/Meta_Force_kotlin`](https://github.com/Mariogarluu/Meta_Force_kotlin) | Kotlin 2.0 · Jetpack Compose · Hilt · Retrofit · DataStore |
 | Analítica BI | Carpeta [`back/analytics/`](../back/analytics/) en el repo de backend | Python · Pandas · `supabase-py` · Power BI |
+
+> Cada capa se desarrolla y despliega de forma **independiente** desde su propio repositorio: los tres repos anteriores son la fuente de verdad.
 
 ---
 
@@ -447,38 +499,39 @@ npx @compodoc/compodoc -s -d documentation -r 8080
 
 ## Cómo levantar el proyecto en local
 
-```bash
-# 1. Clonar con submódulos
-git clone --recursive https://github.com/Mariogarluu/Meta-Force-App.git
-cd Meta-Force-App
+Clona cada repositorio por separado:
 
-# 2. Frontend
-cd front
+```bash
+# 1. Frontend
+git clone https://github.com/Mariogarluu/Meta_Force_front.git
+cd Meta_Force_front
 cp .env.example .env   # configurar SUPABASE_URL y ANON KEY
 npm install
 npm start              # http://localhost:4200
 
-# 3. Backend Supabase (opcional, en local)
-cd ../back
+# 2. Backend Supabase (opcional, en local)
+git clone https://github.com/Mariogarluu/Meta_Force_back.git
+cd Meta_Force_back
 cp .env.example .env   # rellenar DATABASE_URL, SUPABASE_SERVICE_ROLE_KEY, JWT_QR_SECRET, RESEND_*
 npm install
 npx supabase start
 npx supabase db push
 npx supabase functions deploy
 
-# 4. App Android
-#   Abrir kotlin/ con Android Studio (JDK 17, SDK 26+)
+# 3. App Android
+git clone https://github.com/Mariogarluu/Meta_Force_kotlin.git
+#   Abrir el proyecto con Android Studio (JDK 17, SDK 26+)
 #   Ajustar BASE_URL en di/NetworkModule.kt si apunta a otro entorno
 #   Run ▶
 
-# 5. Analytics (Power BI ETL)
-cd ../back/analytics
+# 4. Analytics (Power BI ETL) — vive dentro del repo de backend
+cd Meta_Force_back/analytics
 pip install -r requirements.txt
 python extract_data.py   # genera CSV en exports/
 #   Abrir Power_Bi/MetaForce_Superadmin_Dashboard.pbix y refrescar fuentes
 ```
 
-> Los detalles de despliegue, secretos y troubleshooting están en los README de cada submódulo: [`front/README.md`](../front/README.md), [`back/README.md`](../back/README.md), [`kotlin/README.md`](../kotlin/README.md).
+> Los detalles de despliegue, secretos y troubleshooting están en el README de cada repositorio: [Meta_Force_front](https://github.com/Mariogarluu/Meta_Force_front), [Meta_Force_back](https://github.com/Mariogarluu/Meta_Force_back), [Meta_Force_kotlin](https://github.com/Mariogarluu/Meta_Force_kotlin).
 
 ---
 
@@ -489,12 +542,13 @@ Estos elementos **no están aún en el repositorio** y son necesarios antes de l
 1. **Capturas del producto** en `readme/img/` (web, móvil, Power BI, diagrama de arquitectura). Mínimo 6 capturas referenciadas en la sección [Capturas y vistas del producto](#capturas-y-vistas-del-producto).
 2. **PDF unificado de Confluence** (`readme/docs/Meta-Force_Confluence.pdf`) — exportar el espacio `MetaForce` o las páginas clave.
 3. **PDF resumen de gestión Jira** (`readme/docs/Meta-Force_Jira.pdf`) — debe incluir tablero, épicas, tareas por persona y *burndown* / cierre de sprint.
-4. **URL pública del servidor Compodoc desplegado** (Vercel/Netlify/GitHub Pages) que estará viva durante la evaluación.
-5. **Credenciales de prueba** (`SUPERADMIN`, `ADMIN_CENTER`, `CLIENT`) accesibles para el tribunal.
-6. **Enlace al APK / release de la app Android** en GitHub Releases del repo `Meta_Force_kotlin` (si se va a entregar instalable).
-7. **Diagrama de arquitectura en imagen** (PNG/SVG) en `readme/img/08-arquitectura.png` — el ASCII actual sirve como borrador.
-8. **Confirmar** si el repositorio guía oficial declarado al profesorado es este (`Mariogarluu/Meta-Force-App`) o uno público distinto, para enlazar en la **tabla maestra** de `exposiciones_proyecto_intermodular_25_26_2DAM_M`.
-9. **(Opcional)** Vídeo demo de 60–90 s subido a YouTube / Drive como plan B por si falla la red durante la demo en vivo.
+4. **Lean Canvas de EIE** (`readme/docs/Meta-Force_Lean_Canvas.pdf`) — versión final firmada/aprobada para subir al repo y mencionar en la exposición.
+5. **URL pública del servidor Compodoc desplegado** (Vercel/Netlify/GitHub Pages) que estará viva durante la evaluación.
+6. **Credenciales de prueba** (`SUPERADMIN`, `ADMIN_CENTER`, `CLIENT`) accesibles para el tribunal.
+7. **Enlace al APK / release de la app Android** en GitHub Releases del repo `Meta_Force_kotlin` (si se va a entregar instalable).
+8. **Diagrama de arquitectura en imagen** (PNG/SVG) en `readme/img/08-arquitectura.png` — el ASCII actual sirve como borrador.
+9. **Confirmar la URL que se publicará en la tabla maestra** del repositorio del profesorado (`exposiciones_proyecto_intermodular_25_26_2DAM_M`): ¿se enlaza este README como repo guía, o uno de los tres repos públicos (`Meta_Force_front`, `Meta_Force_back`, `Meta_Force_kotlin`)?
+10. **(Opcional)** Vídeo demo de 60–90 s subido a YouTube / Drive como plan B por si falla la red durante la demo en vivo.
 
 > Una vez disponibles, actualizar las secciones correspondientes y hacer commit en este repo (`readme/`).
 
