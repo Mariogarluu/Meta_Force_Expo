@@ -36,11 +36,12 @@
 8. [Documentación unificada (Confluence)](#documentación-unificada-confluence)
 9. [Gestión del proyecto (Jira)](#gestión-del-proyecto-jira)
 10. [Documentación de código (Compodoc)](#documentación-de-código-compodoc)
-11. [Stack tecnológico](#stack-tecnológico)
-12. [Arquitectura y diagrama general](#arquitectura-y-diagrama-general)
-13. [Cómo levantar el proyecto en local](#cómo-levantar-el-proyecto-en-local)
-14. [Mapeo Rúbrica ↔ Evidencias](#mapeo-rúbrica--evidencias)
-15. [Información que falta por aportar](#información-que-falta-por-aportar)
+11. [Roadmap del proyecto](#roadmap-del-proyecto)
+12. [Stack tecnológico](#stack-tecnológico)
+13. [Arquitectura y diagrama general](#arquitectura-y-diagrama-general)
+14. [Cómo levantar el proyecto en local](#cómo-levantar-el-proyecto-en-local)
+15. [Mapeo Rúbrica ↔ Evidencias](#mapeo-rúbrica--evidencias)
+16. [Información que falta por aportar](#información-que-falta-por-aportar)
 
 ---
 
@@ -184,6 +185,65 @@ Las capturas en vivo del producto se almacenan en [`readme/img/`](./img/) y se i
 ## Aportación del proyecto por módulo
 
 Subapartado obligatorio por cada módulo (con objetivos cubiertos, evidencias en el repo y limitaciones / líneas futuras).
+
+### Mapa de integración módulos ↔ features
+
+Visualización del criterio **“Integración multi-módulo”** de la rúbrica: cada rama es un módulo del ciclo y los hijos son las features concretas del proyecto que materializan sus competencias.
+
+```mermaid
+mindmap
+  root((Meta Force<br/>2.º DAM))
+    AD · Acceso a datos
+      PostgreSQL + Prisma
+      Migraciones SQL versionadas
+      RLS en 34/34 tablas
+      RPCs (duplicate workout, reorder diet)
+      Custom token hook
+      Tests SQL (rls_catalog, role_isolation)
+    PMDM · Multimedia y móviles
+      App Android Kotlin 2.0
+      Jetpack Compose + Material 3
+      MVVM + Hilt
+      Retrofit + interceptor JWT
+      DataStore (sesión local)
+      QR generado en dispositivo
+      Coil + imágenes
+    PSP · Servicios y procesos
+      17 Edge Functions Deno
+      Coroutines + StateFlow
+      RxJS + Signals
+      Rate limiting
+      ETL Python en background
+      Resend / Cloudinary / Groq
+    DI · Desarrollo de interfaces
+      Angular 19 SPA standalone
+      Tailwind + tema dark/light
+      i18n ES · EN · FR
+      Angular Signals
+      Componentes shared reutilizables
+      Power BI dashboard Superadmin
+      Compodoc generado
+    SyA · Servidores y APIs
+      Supabase Cloud + Vercel
+      Swagger / OpenAPI
+      JWT + app_role claim
+      Helmet · CORS · Zod
+      Auditoría OWASP ZAP
+      Despliegue CI/CD
+    SGE · Sistemas de gestión empresarial
+      Catálogo planes/precios/duraciones
+      Facturación con snapshots
+      Numeración fiscal estable
+      Email automático Resend
+      ETL Python + Pandas
+      Power BI .pbix Superadmin
+    EIE · Empresa e Iniciativa
+      Lean Canvas
+      Segmentos y propuesta de valor
+      Modelo SaaS B2C
+      KPIs alineados con Power BI
+      Cumplimiento RGPD/LOPDGDD
+```
 
 ### Acceso a datos — Juan Antonio García Gómez
 
@@ -457,6 +517,59 @@ npx @compodoc/compodoc -s -d documentation -r 8080
 
 ---
 
+## Roadmap del proyecto
+
+Línea temporal real basada en las **fechas de las migraciones SQL** (`back/supabase/migrations/`) y los hitos documentados en Confluence / Jira. Va desde el arranque del curso hasta la exposición del 5 de junio de 2026.
+
+```mermaid
+gantt
+    title Meta Force · Curso 2025/2026 — hitos reales del proyecto
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %Y
+    todayMarker stroke-width:2px,stroke:#EF4444
+
+    section Planificación
+    Arranque + historias de usuario (SCRUM-2)       :done, plan1, 2025-10-17, 25d
+    Maquetación inicial Angular (SCRUM-65)          :done, plan2, 2025-11-24, 35d
+
+    section Backend & datos
+    Base Express + Prisma + PostgreSQL              :done, be1, 2025-12-15, 90d
+    Migración SCRUM-138 Express → Supabase          :done, be2, 2026-04-16, 14d
+    auth_trigger + RLS policies + storage setup     :done, be3, 2026-04-16, 5d
+    profiles + auth link + handle_new_user fixes    :done, be4, 2026-04-17, 3d
+    Security advisors + lint fixes                  :done, be5, 2026-04-25, 5d
+
+    section Negocio (SCRUM-18)
+    Subscriptions core + RLS gate                   :done, biz1, 2026-05-08, 2d
+    Invoices storage bucket + PDF dispatch          :done, biz2, 2026-05-09, 2d
+    me/subscriptions API                            :done, biz3, 2026-05-09, 1d
+
+    section Hardening roles
+    user_roles table + JWT app_role claim           :done, sec1, 2026-05-10, 3d
+    drop profiles.role + get_my_role RPC            :done, sec2, 2026-05-10, 1d
+    Auditoría OWASP ZAP + security-audit            :done, sec3, 2026-05-20, 9d
+
+    section IA & analytics
+    AI chat sessions + save-plan                    :done, ai1, 2026-05-01, 7d
+    ETL Python + Power BI Superadmin                :done, an1, 2026-05-23, 7d
+    Superadmin analytics RLS                        :done, an2, 2026-05-23, 1d
+
+    section App Android
+    Login + dashboard + workouts + diets             :done, app1, 2026-02-01, 60d
+    Clases + centros + QR + chat IA                 :done, app2, 2026-04-01, 45d
+    Pulido UX + release final                       :active, app3, 2026-05-20, 14d
+
+    section Documentación & exposición
+    Confluence MetaForce + informe migración        :done, doc1, 2026-04-25, 35d
+    README guía + ERD + Mermaid                     :active, doc2, 2026-05-29, 5d
+    Lean Canvas (EIE) + PDFs Confluence/Jira        :crit, doc3, 2026-05-30, 5d
+    🎤 Exposición CPIFP Alan Turing                  :milestone, expo, 2026-06-05, 0d
+```
+
+> El marcador rojo de `todayMarker` aparece automáticamente en GitHub sobre la fecha actual cuando renderiza el diagrama, lo que da una sensación visual inmediata del avance al tribunal.
+
+---
+
 ## Stack tecnológico
 
 ### Frontend web — Angular 19
@@ -564,6 +677,356 @@ flowchart LR
 ```
 
 > Detalle completo: [`back/docs/ARCHITECTURE.md`](../back/docs/ARCHITECTURE.md) y [`front/docs/FE-ARCHITECTURE.md`](../front/docs/FE-ARCHITECTURE.md).
+
+### Modelo de datos (ERD)
+
+Diagrama generado a partir del esquema **real** de Supabase (`public.*`, leído en vivo vía `information_schema`), no del `schema.prisma` (que está desactualizado tras la migración SCRUM-138). Refleja el **doble sistema de identidad** del sistema:
+
+- 🔵 **Bloque legacy** (Prisma): tablas con `id text`, dominio de gimnasio (`User`, `Center`, `Workout`, `Diet`, `AiChatSession`…).
+- 🟢 **Bloque Supabase Auth** (UUID): `auth.users` → `profiles` ↔ `user_roles` ↔ `subscriptions` ↔ `invoices`.
+- 🌉 **Puente** entre ambos: `User.auth_user_id (uuid)` ↔ `profiles.id (uuid)` y `profiles.legacy_user_id (text)` ↔ `User.id`.
+
+```mermaid
+erDiagram
+    %% --- Bloque dominio gimnasio (legacy id text) ---
+    User ||--o{ Workout : "tiene"
+    User ||--o{ Diet : "tiene"
+    User ||--o{ AiChatSession : "abre"
+    User ||--o{ BodyWeightRecord : "registra"
+    User ||--o{ ExerciseRecord : "registra"
+    User ||--o{ ExerciseLog : "registra"
+    User ||--o{ UserMeasurement : "registra"
+    User ||--o{ Notification : "recibe"
+    User ||--o{ ClassTrainer : "imparte"
+    User }o--|| Center : "pertenece"
+    User }o--|| Center : "favorito"
+
+    Center ||--o{ Machine : "aloja"
+    Center ||--o{ ClassCenterSchedule : "programa"
+    Center ||--o{ Ticket : "gestiona"
+
+    MachineType ||--o{ Machine : "tipa"
+    MachineType ||--o{ Exercise : "soporta"
+
+    GymClass ||--o{ ClassCenterSchedule : "ocurre en"
+    GymClass ||--o{ ClassTrainer : "asigna"
+
+    Workout ||--o{ WorkoutExercise : "encadena"
+    Exercise ||--o{ WorkoutExercise : "se usa en"
+    Exercise ||--o{ ExerciseLog : "se loguea"
+    Exercise ||--o{ ExerciseRecord : "marca PR"
+
+    Diet ||--o{ DietMeal : "compone"
+    Meal ||--o{ DietMeal : "incluida"
+
+    AiChatSession ||--o{ AiChatMessage : "contiene"
+
+    %% --- Bloque Auth + facturación (UUID Supabase) ---
+    auth_users ||--|| profiles : "1:1"
+    auth_users ||--o{ user_roles : "tiene"
+    auth_users ||--o{ subscriptions : "contrata"
+    subscriptions ||--o{ invoices : "factura"
+    subscription_plans ||--o{ subscriptions : "ofrece"
+    subscription_plans ||--o{ plan_prices : "precia"
+    subscription_plans ||--o{ plan_features : "describe"
+    subscription_plans ||--o{ special_offers : "oferta"
+    plan_durations ||--o{ plan_prices : "duración"
+    plan_durations ||--o{ subscriptions : "vigencia"
+    plan_durations ||--o{ special_offers : "duración"
+    special_offers ||--o{ subscriptions : "aplica"
+
+    %% --- Puente legacy ↔ auth ---
+    profiles ||..|| User : "auth_user_id ↔ id"
+
+    User {
+        text id PK
+        text email UK
+        text name
+        text passwordHash "nullable (legacy)"
+        enum role "SUPERADMIN · ADMIN_CENTER · TRAINER · CLEANER · USER"
+        enum status "PENDING · ACTIVE · INACTIVE"
+        uuid auth_user_id FK "→ auth.users.id"
+        text centerId FK
+        text favoriteCenterId FK
+        double height
+        double currentWeight
+        text goal
+        text activityLevel
+        timestamp createdAt
+        timestamp updatedAt
+    }
+    Center {
+        text id PK
+        text name
+        text address
+        text city
+        text country
+        text phone
+        text email
+    }
+    Machine {
+        text id PK
+        text machineTypeId FK
+        text centerId FK
+        int instanceNumber
+        text status "OPERATIONAL · MAINTENANCE · OUT_OF_SERVICE"
+        int maxUsers
+    }
+    MachineType {
+        text id PK
+        text name
+        text type "CARDIO · STRENGTH · FREE_WEIGHT · FUNCTIONAL"
+    }
+    GymClass {
+        text id PK
+        text name
+        text description
+    }
+    ClassCenterSchedule {
+        text id PK
+        text classId FK
+        text centerId FK
+        int dayOfWeek
+        text startTime
+        text endTime
+    }
+    ClassTrainer {
+        text id PK
+        text classId FK
+        text trainerId FK
+    }
+    Workout {
+        text id PK
+        text userId FK
+        text name
+        text description
+    }
+    WorkoutExercise {
+        text id PK
+        text workoutId FK
+        text exerciseId FK
+        int dayOfWeek
+        int order
+        int sets
+        int reps
+        double weight
+        int restSeconds
+    }
+    Exercise {
+        text id PK
+        text name
+        text machineTypeId FK
+        text imageUrl
+        text videoUrl
+    }
+    Diet {
+        text id PK
+        text userId FK
+        text name
+    }
+    DietMeal {
+        text id PK
+        text dietId FK
+        text mealId FK
+        int dayOfWeek
+        text mealType
+        double quantity
+    }
+    Meal {
+        text id PK
+        text name
+        double calories
+        double protein
+        double carbs
+        double fats
+    }
+    AiChatSession {
+        text id PK
+        text userId FK
+        text title
+        timestamp updatedAt
+    }
+    AiChatMessage {
+        text id PK
+        text sessionId FK
+        text role "user · assistant · system"
+        text content
+    }
+
+    auth_users {
+        uuid id PK "auth.users (Supabase)"
+        text email
+    }
+    profiles {
+        uuid id PK "= auth.users.id"
+        text legacy_user_id FK "→ User.id"
+        text email
+        text name
+    }
+    user_roles {
+        uuid user_id PK "= auth.users.id"
+        enum role "SUPERADMIN · ADMIN_CENTER · TRAINER · CLEANER · USER"
+        uuid granted_by FK
+    }
+    subscription_plans {
+        uuid id PK
+        text code UK "basic · standard · premium"
+        text name
+        int position
+        bool active
+    }
+    plan_durations {
+        uuid id PK
+        int months
+        text label
+        bool active
+    }
+    plan_prices {
+        uuid plan_id FK
+        uuid duration_id FK
+        numeric price
+        numeric tax_rate
+    }
+    subscriptions {
+        uuid id PK
+        uuid user_id FK
+        uuid plan_id FK
+        uuid duration_id FK
+        uuid offer_id FK
+        date start_date
+        date end_date
+        text status
+        numeric total
+    }
+    invoices {
+        uuid id PK
+        uuid subscription_id FK
+        text number "numeración fiscal estable"
+        date issue_date
+        jsonb customer_snapshot
+        jsonb issuer_snapshot
+        numeric total
+        text pdf_path "Storage: invoices/"
+    }
+    special_offers {
+        uuid id PK
+        uuid plan_id FK
+        uuid duration_id FK
+    }
+    plan_features {
+        uuid plan_id FK
+        text feature
+    }
+```
+
+> **Notas de diseño** (puntos extra para “honestidad sobre límites técnicos”):
+>
+> - El **doble ID** es deuda técnica heredada de la migración Express/Prisma → Supabase Auth: el dominio de gimnasio mantiene `text` para no romper FKs y los nuevos módulos (Auth, suscripciones, facturación) ya usan `uuid` nativo. Línea futura: unificar todo a `uuid` cuando el legado se haya provisionado al 100 % en `auth.users`.
+> - El rol vive en `public.user_roles` (no en `user_metadata`) y se inyecta como claim `app_role` mediante el *custom access token hook* `public.custom_access_token_hook`. Las políticas RLS leen ese claim, no la tabla, para evitar un round-trip por cada query.
+> - Las **facturas almacenan snapshots** (`customer_snapshot`, `issuer_snapshot` en `jsonb`) para garantizar trazabilidad fiscal aunque los datos del cliente o del emisor cambien después.
+
+### Flujos críticos (sequence diagrams)
+
+#### A · Autenticación con *custom access token hook*
+
+El **rol jamás se lee de `user_metadata`** (vector de manipulación clásico): se persiste en `public.user_roles` y se inyecta como claim `app_role` en cada JWT, que es lo que las políticas RLS leen vía `auth.jwt()->>'app_role'`.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 👤 Usuario
+    participant FE as 🌐 Angular / 📱 Android
+    participant Auth as 🔐 Supabase Auth
+    participant Hook as ⚡ custom_access_token_hook<br/>(public.user_roles)
+    participant DB as 🗄️ PostgreSQL + RLS
+    participant EF as ⚡ Edge Function
+
+    User->>FE: email + password
+    FE->>Auth: signInWithPassword()
+    Auth->>Auth: verifica credenciales
+    Auth->>Hook: invoca hook al emitir token
+    Hook->>DB: SELECT role FROM public.user_roles<br/>WHERE user_id = auth.uid()
+    DB-->>Hook: role = 'SUPERADMIN'
+    Hook-->>Auth: claims += { app_role: 'SUPERADMIN' }
+    Auth-->>FE: JWT (corto, ~10 min)
+    FE->>EF: request + Authorization: Bearer <JWT>
+    EF->>DB: query (RLS activo)
+    DB->>DB: app.is_superadmin() lee<br/>auth.jwt()->>'app_role'
+    DB-->>EF: filas permitidas
+    EF-->>FE: respuesta JSON
+    FE-->>User: render UI según rol
+    Note over Auth,DB: 🛡️ Cambios de rol no se reflejan<br/>hasta que el usuario refresca sesión.<br/>jwt_expiry corto = ventana de exposición mínima.
+```
+
+#### B · Control de acceso al gimnasio mediante QR firmado con JWT corto
+
+El QR del socio no es un identificador estático — **es un JWT firmado con `JWT_QR_SECRET` y expira en segundos**, por lo que un screenshot del QR no sirve para entrar después.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Member as 🏃 Socio
+    participant App as 📱 App móvil
+    participant Sign as ⚡ qr-sign Edge Function
+    participant QR as 🔲 QR (JWT 60s)
+    actor Staff as 👮 Recepción
+    participant Scan as 🌐 QR Scanner (web)
+    participant Access as ⚡ access-scan Edge Function
+    participant DB as 🗄️ PostgreSQL
+
+    Member->>App: abre pantalla "Mi QR"
+    App->>Sign: POST /qr-sign + JWT usuario
+    Sign->>Sign: firma payload<br/>{ user_id, exp: now+60s }<br/>con JWT_QR_SECRET
+    Sign-->>App: token corto
+    App->>QR: renderiza QR con el token
+    Member->>Staff: muestra QR
+    Staff->>Scan: escanea con cámara web
+    Scan->>Access: POST /access-scan + token
+    Access->>Access: verifica firma + exp
+    alt Token válido y no expirado
+        Access->>DB: INSERT access log<br/>(check_in / check_out)
+        DB-->>Access: ok
+        Access-->>Scan: ✅ acceso concedido
+        Scan-->>Staff: feedback verde + datos socio
+    else Token expirado / inválido
+        Access-->>Scan: ❌ 401 + motivo
+        Scan-->>Staff: feedback rojo
+    end
+    Note over Sign,Access: 🔒 Replay attack mitigado:<br/>screenshot del QR caduca en 60 s.
+```
+
+#### C · Asistente de IA: chat + generación y guardado de plan
+
+Una conversación con el coach IA puede convertirse en un entrenamiento o dieta **persistido en el usuario** con un solo click, sin que el cliente tenga que reescribir nada — la transformación ocurre en backend.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 👤 Usuario
+    participant FE as 📱 App / 🌐 Web
+    participant AI as ⚡ ai-chat Edge Function
+    participant Groq as 🤖 Groq LLM
+    participant Save as ⚡ ai-save-plan Edge Function
+    participant DB as 🗄️ AiChatSession +<br/>Workout / Diet
+    participant Sessions as ⚡ ai-sessions Edge Function
+
+    User->>FE: "Quiero un plan full-body de 4 días"
+    FE->>AI: POST /ai-chat<br/>{ sessionId, userMessage }
+    AI->>DB: INSERT AiChatMessage (role=user)
+    AI->>Groq: chat.completions.create(<br/>system prompt + historial<br/>)
+    Groq-->>AI: respuesta estructurada<br/>(JSON plan + texto)
+    AI->>DB: INSERT AiChatMessage (role=assistant)
+    AI-->>FE: respuesta + plan propuesto
+    FE-->>User: muestra plan + botón "Guardar"
+    User->>FE: "Guardar este entrenamiento"
+    FE->>Save: POST /ai-save-plan<br/>{ sessionId, plan, type: workout }
+    Save->>DB: INSERT Workout +<br/>WorkoutExercise (×N)
+    DB-->>Save: workoutId
+    Save-->>FE: ✅ plan guardado
+    FE-->>User: redirige a "Mis entrenamientos"
+
+    Note over Sessions: 🗂️ ai-sessions lista las sesiones<br/>del usuario para el historial.
+```
 
 ---
 
