@@ -21,8 +21,9 @@
 
 1. [Equipo](#equipo)
 2. [Resumen del proyecto](#resumen-del-proyecto)
-3. [Capturas y vistas del producto](#capturas-y-vistas-del-producto)
-4. [Aportación del proyecto por módulo](#aportación-del-proyecto-por-módulo)
+3. [El proyecto en cifras (producción)](#el-proyecto-en-cifras-producción)
+4. [Capturas y vistas del producto](#capturas-y-vistas-del-producto)
+5. [Aportación del proyecto por módulo](#aportación-del-proyecto-por-módulo)
    - [Acceso a datos (Juan Antonio García Gómez)](#acceso-a-datos--juan-antonio-garcía-gómez)
    - [Programación multimedia y dispositivos móviles (David Hormigo Ramírez)](#programación-multimedia-y-dispositivos-móviles--david-hormigo-ramírez)
    - [Programación de servicios y procesos (David Hormigo Ramírez)](#programación-de-servicios-y-procesos--david-hormigo-ramírez)
@@ -30,15 +31,16 @@
    - [Servidores y APIs (Juan Antonio García Gómez)](#servidores-y-apis--juan-antonio-garcía-gómez)
    - [Sistemas de gestión empresarial (Miguel Ángel Ronda Carracao)](#sistemas-de-gestión-empresarial--miguel-ángel-ronda-carracao)
    - [Empresa e Iniciativa Emprendedora II (Rosa Carmen Alcázar Rosal)](#empresa-e-iniciativa-emprendedora-ii--rosa-carmen-alcázar-rosal)
-5. [Repositorios de código](#repositorios-de-código)
-6. [Despliegue y entornos](#despliegue-y-entornos)
-7. [Documentación unificada (Confluence)](#documentación-unificada-confluence)
-8. [Gestión del proyecto (Jira)](#gestión-del-proyecto-jira)
-9. [Documentación de código (Compodoc)](#documentación-de-código-compodoc)
-10. [Stack tecnológico](#stack-tecnológico)
-11. [Arquitectura y diagrama general](#arquitectura-y-diagrama-general)
-12. [Cómo levantar el proyecto en local](#cómo-levantar-el-proyecto-en-local)
-13. [Información que falta por aportar](#información-que-falta-por-aportar)
+6. [Repositorios de código](#repositorios-de-código)
+7. [Despliegue y entornos](#despliegue-y-entornos)
+8. [Documentación unificada (Confluence)](#documentación-unificada-confluence)
+9. [Gestión del proyecto (Jira)](#gestión-del-proyecto-jira)
+10. [Documentación de código (Compodoc)](#documentación-de-código-compodoc)
+11. [Stack tecnológico](#stack-tecnológico)
+12. [Arquitectura y diagrama general](#arquitectura-y-diagrama-general)
+13. [Cómo levantar el proyecto en local](#cómo-levantar-el-proyecto-en-local)
+14. [Mapeo Rúbrica ↔ Evidencias](#mapeo-rúbrica--evidencias)
+15. [Información que falta por aportar](#información-que-falta-por-aportar)
 
 ---
 
@@ -82,6 +84,53 @@ Profesorado evaluador (5 de junio de 2026):
 - **Control de acceso físico al gimnasio mediante QR firmado con JWT corto** (`qr-sign` + `access-scan` Edge Functions).
 - **Suscripciones y facturación nativa** (`subscription_plans`, `plan_durations`, `plan_prices`, `subscriptions`, `invoices`) con generación de PDF (`invoice-pdf`) y envío automático por email vía Resend (`subscription-email`).
 - **IA conversacional** con persistencia de sesiones (`AiChatSession`, `AiChatMessage`) y guardado directo de planes generados al perfil del usuario.
+
+---
+
+## El proyecto en cifras (producción)
+
+> Datos leídos en vivo del proyecto Supabase (`qybgnrlszozjhimewkel.supabase.co`) en la fecha de cierre de esta documentación. Reproducible con `back/scripts/load-env.mjs` + `back/analytics/extract_data.py`.
+
+### Volumen de datos
+
+| Dominio | Tabla(s) | Registros |
+|---------|----------|----------:|
+| 👥 Usuarios autenticados | `User` + `profiles` + `user_roles` | **80 usuarios** · 5 perfiles enlazados a `auth.users` · 5 roles asignados |
+| 🏢 Centros deportivos | `Center` | **8 centros** |
+| 🏋️ Equipamiento | `Machine` + `MachineType` | 2 máquinas operativas sobre **14 tipos** modelados |
+| 📅 Clases y horarios | `GymClass` + `ClassCenterSchedule` + `ClassTrainer` | **32 clases** con **1 024 ocurrencias programadas** y 77 asignaciones de entrenadores |
+| 💪 Entrenamientos | `Workout` + `WorkoutExercise` + `Exercise` | 9 rutinas con **67 ejercicios encadenados** sobre un catálogo de **90 ejercicios** |
+| 🥗 Nutrición | `Diet` + `DietMeal` + `Meal` | 4 dietas con 6 comidas asignadas (3 comidas en catálogo) |
+| 🤖 IA conversacional | `AiChatSession` + `AiChatMessage` | **13 sesiones** con **26 mensajes** persistidos |
+| 💳 Negocio | `subscription_plans` + `subscriptions` + `invoices` | **3 planes** (`basic` · `standard` · `premium`) · 3 suscripciones activas · **3 facturas emitidas con numeración fiscal estable** |
+| ⚖️ Métricas físicas | `BodyWeightRecord` + `ExerciseRecord` | 6 registros de peso corporal · 4 marcas personales |
+
+### Plataforma técnica
+
+| Métrica | Valor |
+|---------|------:|
+| Tablas con RLS habilitado | **34 / 34** (100 %) |
+| Migraciones SQL versionadas | **25+** en `back/supabase/migrations/` |
+| Edge Functions desplegadas | **17** en `back/supabase/functions/` |
+| Tests SQL (RLS, roles, facturación) | 5 suites en `back/supabase/tests/` |
+| Tests E2E (smoke roles + SCRUM-18) | 2 en `back/tests/e2e/` |
+| Issues totales en Jira `SCRUM` | hasta `SCRUM-180` |
+| Épicas principales | 3 (Historias de usuario · Maquetación · Infraestructura) |
+| Idiomas soportados (web) | 3 (ES · EN · FR) |
+| Idiomas soportados (móvil) | 2 (ES · EN) |
+| Build de producción | ✅ desplegado en Vercel (`meta-force-psi.vercel.app`) |
+
+### Distribución de roles en producción
+
+```mermaid
+pie showData
+    title Roles asignados (public.user_roles)
+    "USER" : 3
+    "SUPERADMIN" : 1
+    "TRAINER" : 1
+```
+
+> El resto de los 80 registros en `public."User"` corresponde a usuarios legacy importados desde el `seed-from-json.mjs` y mapeados con `legacy_user_map`, aún pendientes de provisionar en `auth.users` y `user_roles`.
 
 ---
 
@@ -463,34 +512,55 @@ npx @compodoc/compodoc -s -d documentation -r 8080
 
 ## Arquitectura y diagrama general
 
-```
-                       ┌────────────────────────────┐
-                       │   Power BI Superadmin       │
-                       │   (.pbix + CSV exports)     │
-                       └──────────────┬──────────────┘
-                                      │
-                       ┌──────────────┴──────────────┐
-                       │   Python ETL (Pandas)        │
-                       │   back/analytics/extract.py  │
-                       └──────────────┬──────────────┘
-                                      │ SERVICE_ROLE_KEY
-                                      ▼
-   ┌──────────────────────┐   ┌─────────────────────────────┐   ┌──────────────────────┐
-   │ Angular 19 (Vercel)  │──▶│  Supabase Cloud             │◀──│ Android (Kotlin)     │
-   │ meta-force-psi...    │   │  - PostgreSQL + RLS         │   │ Retrofit + Hilt      │
-   │ Tailwind · i18n ·    │   │  - Auth (JWT + app_role)    │   │ Compose + DataStore  │
-   │ Signals · Compodoc   │   │  - Storage (invoices, img)  │   │                      │
-   └──────────┬───────────┘   │  - Edge Functions (Deno)    │   └──────────────────────┘
-              │ supabase-js   │     ai-chat · qr-sign ·     │
-              │               │     invoice-pdf · ...        │
-              ▼               │  - Migrations SQL versionadas│
-   ┌──────────────────────┐   └──────────────┬──────────────┘
-   │ HTML5-QRCode +       │                  │ HTTPS
-   │ QR Scanner (cámara)  │                  ▼
-   └──────────────────────┘   ┌─────────────────────────────┐
-                              │ Resend (email) · Cloudinary │
-                              │ Groq (LLM IA)               │
-                              └─────────────────────────────┘
+```mermaid
+flowchart LR
+    subgraph Clients["👥 Clientes"]
+        Web["🌐 Angular 19 SPA<br/>Vercel<br/>meta-force-psi.vercel.app"]
+        Android["📱 App Android<br/>Kotlin · Compose · Hilt<br/>Retrofit + DataStore"]
+        BI["📊 Power BI Desktop<br/>Superadmin Dashboard"]
+    end
+
+    subgraph Supabase["☁️ Supabase Cloud — qybgnrlszozjhimewkel.supabase.co"]
+        Auth["🔐 Auth<br/>JWT + custom hook<br/>(app_role claim)"]
+        DB[("🗄️ PostgreSQL<br/>34 tablas · RLS · RPCs<br/>Migraciones SQL versionadas")]
+        Storage["📦 Storage<br/>buckets: invoices,<br/>profile-images"]
+        EF["⚡ Edge Functions (Deno)<br/>ai-chat · qr-sign ·<br/>invoice-pdf · access-scan ·<br/>subscription-email · bulk-import"]
+    end
+
+    subgraph External["🔌 Servicios externos"]
+        Resend["✉️ Resend<br/>emails de facturación"]
+        Cloudinary["🖼️ Cloudinary<br/>fotos de perfil"]
+        Groq["🤖 Groq<br/>LLM para IA conversacional"]
+    end
+
+    subgraph Analytics["📈 Analítica BI"]
+        ETL["🐍 Python ETL<br/>pandas + supabase-py<br/>back/analytics/extract_data.py"]
+        CSV["📄 exports/*.csv"]
+        PBIX["📊 .pbix Superadmin Dashboard"]
+    end
+
+    Web -- "supabase-js (JWT)" --> Auth
+    Web -- "REST / RPC" --> EF
+    Web -- "QR Scanner<br/>(html5-qrcode)" --> EF
+    Android -- "Retrofit + JWT" --> EF
+    Auth -. "app_role claim" .-> DB
+    EF -- "service role" --> DB
+    EF -- "signed URLs" --> Storage
+    EF -- "emails" --> Resend
+    EF -- "uploads" --> Cloudinary
+    EF -- "completions" --> Groq
+
+    ETL -- "SERVICE_ROLE_KEY" --> DB
+    ETL --> CSV --> PBIX --> BI
+
+    classDef client fill:#E0F2FE,stroke:#0EA5E9,color:#0C4A6E
+    classDef cloud fill:#DCFCE7,stroke:#22C55E,color:#14532D
+    classDef ext fill:#FEF3C7,stroke:#F59E0B,color:#78350F
+    classDef bi fill:#F3E8FF,stroke:#A855F7,color:#581C87
+    class Web,Android,BI client
+    class Auth,DB,Storage,EF cloud
+    class Resend,Cloudinary,Groq ext
+    class ETL,CSV,PBIX bi
 ```
 
 > Detalle completo: [`back/docs/ARCHITECTURE.md`](../back/docs/ARCHITECTURE.md) y [`front/docs/FE-ARCHITECTURE.md`](../front/docs/FE-ARCHITECTURE.md).
@@ -532,6 +602,44 @@ python extract_data.py   # genera CSV en exports/
 ```
 
 > Los detalles de despliegue, secretos y troubleshooting están en el README de cada repositorio: [Meta_Force_front](https://github.com/Mariogarluu/Meta_Force_front), [Meta_Force_back](https://github.com/Mariogarluu/Meta_Force_back), [Meta_Force_kotlin](https://github.com/Mariogarluu/Meta_Force_kotlin).
+
+---
+
+## Mapeo Rúbrica ↔ Evidencias
+
+Tabla diseñada para que **el tribunal** localice rápidamente las evidencias de cada criterio de la rúbrica oficial de las exposiciones del 5 de junio de 2026 (CPIFP Alan Turing — 2.º DAM mañana).
+
+| # | Criterio de la rúbrica | Dónde se demuestra en este proyecto |
+|---|------------------------|--------------------------------------|
+| 1 | **Exposición oral y estructura** (claridad, orden, tiempo ≤15 min, reparto en equipo) | Guion minutado del bloque 10:00–10:15 — ver [Equipo](#equipo) y la sección final “Plan de demo” (pendiente, ver [Información que falta](#información-que-falta-por-aportar)). Reparto explícito de los 3 miembros del equipo. |
+| 2 | **Demostración técnica** (coherencia con discurso, estabilidad, plan B) | Demo en vivo sobre [meta-force-psi.vercel.app](https://meta-force-psi.vercel.app/) + APK Android + Power BI Desktop. Plan B: vídeo demo grabado *(pendiente)* y datos de prueba ya sembrados (`back/scripts/seed-from-json.mjs`, 80 usuarios y 1.024 horarios reales). |
+| 3 | **Usabilidad de la aplicación** (navegación, feedback, accesibilidad básica, flujos críticos) | Componentes Angular con estados de carga/vacío/error (`error-toast`, `notification.service.ts`), guards de ruta (`auth`, `guest`, `role`), mensajes traducidos a 3 idiomas (`front/public/assets/i18n/`). En móvil, MVVM con `StateFlow` y feedback Material 3 (`kotlin/app/src/main/java/.../ui/`). |
+| 4 | **Apariencia (UI/UX)** (tipografía, color, espaciado, estados, coherencia visual) | Identidad visual unificada web+móvil ([sección Identidad visual](#identidad-visual--brand-assets)), Tailwind 3.4 + tema claro/oscuro persistente, Material Design 3 en Android, paleta documentada en `kotlin/README.md`. |
+| 5 | **Dificultad técnica e implementación** (arquitectura, integraciones, despliegue, calidad, CI/CD, seguridad) | Migración real Express→Supabase (`back/docs/MIGRATION_DECISIONS.md`), 34 tablas con RLS al 100 %, 17 Edge Functions Deno, JWT con *custom access token hook*, QR firmado con JWT corto, facturación con numeración fiscal estable, ETL Python a Power BI. Ver [Arquitectura](#arquitectura-y-diagrama-general) y [El proyecto en cifras](#el-proyecto-en-cifras-producción). |
+| 6 | **Calidad de la documentación** (README según guía, PDF unificado, trazabilidad módulo↔evidencias, enlaces/imágenes válidos) | Este `readme/README.md` cumple la guía punto por punto: índice, equipo, descripción + imágenes referenciadas con rutas relativas, [subapartado por cada módulo con evidencias enlazadas](#aportación-del-proyecto-por-módulo), enlaces a repos, producción, Confluence, Jira, Compodoc. |
+| 7 | **Gestión de proyecto (Jira)** (alcance, epics, reparto, estado de tareas; coherencia con entregable) | Proyecto Jira `SCRUM` (`https://meta-force.atlassian.net`), 3 épicas con responsables claros (SCRUM-2, SCRUM-65, SCRUM-147), hasta `SCRUM-180`, tipos custom para módulo Android. PDF resumen pendiente. Ver [Gestión del proyecto (Jira)](#gestión-del-proyecto-jira). |
+| 8 | **Documentación de código (Compodoc)** (cobertura útil, servidor accesible, utilidad para revisor externo) | Compodoc ya generado en [`front/documentation/`](../front/documentation/) (index, modules, routes, coverage). URL pública del servidor pendiente. Ver [Documentación de código (Compodoc)](#documentación-de-código-compodoc). |
+| 9 | **Integración multi-módulo** (cómo encajan AD, PSP/PMDM, DI, Servidores, SGE, EIE; honestidad sobre límites) | Una subsección por módulo con objetivos cubiertos, evidencias y limitaciones / líneas futuras. Ver [Aportación del proyecto por módulo](#aportación-del-proyecto-por-módulo) — incluye **AD**, **PMDM**, **PSP**, **DI**, **SyA**, **SGE** y **EIE II** (Lean Canvas). |
+| 10 | **Originalidad y valor del producto** (más allá de un CRUD genérico) | Diferenciales documentados en [Resumen del proyecto](#resumen-del-proyecto) y [Diferencial frente a un CRUD genérico](#diferencial-frente-a-un-crud-genérico): QR firmado JWT, facturación SaaS real, IA conversacional con persistencia, dashboard Power BI ejecutivo, app multi-plataforma. |
+| 11 | **Trabajo en equipo** (coordinación commits/Jira/README; narrativa conjunta) | Equipo de 3 con roles diferenciados (ver [Equipo](#equipo)), 3 épicas Jira con owner explícito (uno por persona), commits visibles en cada repo. Reparto detallado por persona pendiente *(ver [Información que falta](#información-que-falta-por-aportar))*. |
+
+### Auto-evaluación orientativa
+
+| Criterio | Estado actual | Riesgo si no se cierran pendientes |
+|----------|---------------|------------------------------------|
+| 1 · Exposición oral | 🟢 Listo (con guion) | Bajo |
+| 2 · Demo técnica | 🟡 Listo si Vercel + Supabase responden | Plan B (vídeo) pendiente |
+| 3 · Usabilidad | 🟢 Listo | Bajo |
+| 4 · UI/UX | 🟢 Listo | Bajo |
+| 5 · Dificultad técnica | 🟢 Muy fuerte | Bajo |
+| 6 · Documentación | 🟡 Falta PDF unificado Confluence + capturas | Medio |
+| 7 · Jira | 🟡 Falta PDF resumen | Medio |
+| 8 · Compodoc | 🟡 Falta servidor desplegado | Medio (penaliza directo) |
+| 9 · Integración multi-módulo | 🟢 Listo | Bajo |
+| 10 · Originalidad | 🟢 Listo | Bajo |
+| 11 · Trabajo en equipo | 🟢 Listo | Bajo |
+
+> 🟢 listo · 🟡 mejorable / pendiente de un entregable concreto · 🔴 ausente.
 
 ---
 
