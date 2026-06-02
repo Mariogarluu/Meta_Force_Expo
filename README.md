@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="../front/public/Logo.png" alt="Meta Force" width="160" />
+<img src="https://raw.githubusercontent.com/Mariogarluu/Meta_Force_front/main/public/Logo.png" alt="Meta Force" width="160" />
 
 **Plataforma integral de gestión de centros deportivos: web (Angular + Supabase), app Android (Kotlin/Jetpack Compose), IA asistente y analítica BI.**
 
@@ -144,15 +144,15 @@ Activos disponibles directamente en los repositorios de cada capa:
 <table>
   <tr>
     <td align="center" width="33%">
-      <img src="../front/public/Logo.png" alt="Logo Meta Force (web)" width="160" /><br/>
+      <img src="https://raw.githubusercontent.com/Mariogarluu/Meta_Force_front/main/public/Logo.png" alt="Logo Meta Force (web)" width="160" /><br/>
       <sub><b>Logo principal — web</b><br/><code>front/public/Logo.png</code></sub>
     </td>
     <td align="center" width="33%">
-      <img src="../kotlin/app/src/main/res/drawable/app_logo.png" alt="Logo Meta Force (Android)" width="160" /><br/>
+      <img src="https://raw.githubusercontent.com/Mariogarluu/Meta_Force_kotlin/main/app/src/main/res/drawable/app_logo.png" alt="Logo Meta Force (Android)" width="160" /><br/>
       <sub><b>Logo app Android</b><br/><code>kotlin/app/src/main/res/drawable/app_logo.png</code></sub>
     </td>
     <td align="center" width="33%">
-      <img src="../kotlin/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="Launcher icon Android" width="96" /><br/>
+      <img src="https://raw.githubusercontent.com/Mariogarluu/Meta_Force_kotlin/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="Launcher icon Android" width="96" /><br/>
       <sub><b>Launcher icon Android</b><br/><code>kotlin/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png</code></sub>
     </td>
   </tr>
@@ -274,7 +274,7 @@ mindmap
 ### Programación multimedia y dispositivos móviles — David Hormigo Ramírez
 
 <p align="left">
-  <img src="../kotlin/app/src/main/res/drawable/app_logo.png" alt="Meta Force Android" width="120" />
+  <img src="https://raw.githubusercontent.com/Mariogarluu/Meta_Force_kotlin/main/app/src/main/res/drawable/app_logo.png" alt="Meta Force Android" width="120" />
 </p>
 
 **Objetivos del módulo cubiertos**
