@@ -447,7 +447,7 @@ mindmap
 |------------|------------------|---------------|
 | **Web producción** | <https://meta-force-psi.vercel.app/> | Desplegada en Vercel. SPA con `vercel.json` reescrito para rutas Angular. |
 | **API Supabase** | `https://qybgnrlszozjhimewkel.supabase.co` | Edge Functions en `/functions/v1/<name>`. RLS activo. |
-| **App Android** | [Descargar APK (GitHub Releases)](https://github.com/Mariogarluu/Meta_Force_kotlin/releases) | APK de depuración firmado (`app-debug.apk`) listo para descarga e instalación directa. |
+| **App Android** | [Descargar APK (GitHub Releases)](https://github.com/Mariogarluu/Meta_Force_Expo/releases) | APK de depuración firmado (`app-debug.apk`) listo para descarga e instalación directa. |
 | **Compodoc** | `front/documentation/` | *Pendiente:* desplegar como sitio estático accesible durante la evaluación. |
 
 ### Credenciales de prueba para evaluación
