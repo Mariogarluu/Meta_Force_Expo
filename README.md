@@ -175,8 +175,8 @@ Las capturas en vivo del producto se almacenan en [`readme/img/`](./img/) y se i
 | 7 | Dashboard Power BI (analytics) | `readme/img/07-powerbi.png` | ⏳ pendiente |
 | 8 | Diagrama de arquitectura | `readme/img/08-arquitectura.png` | ⏳ pendiente |
 | 9 | Lean Canvas (EIE) | `readme/img/09-lean-canvas.png` | ⏳ pendiente |
-| — | Compodoc (front) | [`front/documentation/`](../front/documentation/) (`index.html`, `coverage.html`, `modules.html`, `routes.html`) | ✅ generado en repo |
-| — | Favicon web | [`front/public/favicon.ico`](../front/public/favicon.ico) | ✅ en repo |
+| — | Compodoc (front) | [`front/documentation/`](https://github.com/Mariogarluu/Meta_Force_front/tree/main/documentation) (`index.html`, `coverage.html`, `modules.html`, `routes.html`) | ✅ generado en repo |
+| — | Favicon web | [`front/public/favicon.ico`](https://github.com/Mariogarluu/Meta_Force_front/blob/main/public/favicon.ico) | ✅ en repo |
 
 > ⚠️ **Pendiente:** subir las capturas reales 1–9 al directorio `readme/img/`. (Ver [Información que falta por aportar](#información-que-falta-por-aportar).)
 
@@ -250,9 +250,9 @@ mindmap
 **Objetivos del módulo cubiertos**
 
 - Modelado de datos relacional sobre PostgreSQL (Supabase).
-- Persistencia ORM con **Prisma 6.18** en el histórico Express y mantenida como *source of truth* declarativa: [`back/prisma/schema.prisma`](../back/prisma/schema.prisma).
-- Migraciones versionadas en **SQL puro** (Supabase) en [`back/supabase/migrations/`](../back/supabase/migrations/) (20+ migraciones aplicadas: triggers de `auth.users → public.profiles`, RLS, custom access token hook, RPC para duplicar entrenamientos, facturación, roles, *security advisors fixes*…).
-- Procedimientos almacenados / RPC para reordenar dietas y duplicar workouts ([`20260418104000_rpc_duplicate_workout_reorder_diet.sql`](../back/supabase/migrations/20260418104000_rpc_duplicate_workout_reorder_diet.sql)).
+- Persistencia ORM con **Prisma 6.18** en el histórico Express y mantenida como *source of truth* declarativa: [`back/prisma/schema.prisma`](https://github.com/Mariogarluu/Meta_Force_back/blob/main/prisma/schema.prisma).
+- Migraciones versionadas en **SQL puro** (Supabase) en [`back/supabase/migrations/`](https://github.com/Mariogarluu/Meta_Force_back/tree/main/supabase/migrations) (20+ migraciones aplicadas: triggers de `auth.users → public.profiles`, RLS, custom access token hook, RPC para duplicar entrenamientos, facturación, roles, *security advisors fixes*…).
+- Procedimientos almacenados / RPC para reordenar dietas y duplicar workouts ([`20260418104000_rpc_duplicate_workout_reorder_diet.sql`](https://github.com/Mariogarluu/Meta_Force_back/blob/main/supabase/migrations/20260418104000_rpc_duplicate_workout_reorder_diet.sql)).
 - Consumo desde múltiples clientes: Angular (Supabase JS), Kotlin/Retrofit (REST a Edge Functions), Python (`supabase-py` para ETL).
 - **34 tablas en producción** con RLS habilitado en todas: `User`, `Center`, `Machine`, `GymClass`, `ClassCenterSchedule` (1.024 filas), `subscriptions`, `invoices`, `user_roles`, `AiChatSession`, `Workout`, `Diet`, etc.
 
@@ -279,7 +279,7 @@ mindmap
 
 **Objetivos del módulo cubiertos**
 
-- App **Android nativa** en **Kotlin 2.0** con **Jetpack Compose + Material Design 3** ([`kotlin/`](../kotlin/)).
+- App **Android nativa** en **Kotlin 2.0** con **Jetpack Compose + Material Design 3** ([`kotlin/`](https://github.com/Mariogarluu/Meta_Force_kotlin/tree/main)).
 - Arquitectura **MVVM + Clean Architecture** con **Dagger Hilt** para inyección de dependencias.
 - **Persistencia local** con Jetpack DataStore (sesión y preferencias).
 - Consumo de **API REST con Retrofit 2 + OkHttp3** (interceptor de auth con JWT).
@@ -289,7 +289,7 @@ mindmap
 
 **Evidencias en el repo**
 
-- 📄 [`kotlin/README.md`](../kotlin/README.md) — arquitectura, stack, endpoints consumidos, paleta visual.
+- 📄 [`kotlin/README.md`](https://github.com/Mariogarluu/Meta_Force_kotlin/blob/main/README.md) — arquitectura, stack, endpoints consumidos, paleta visual.
 - 📂 `kotlin/app/src/main/java/com/meta_force/meta_force/` — capa `data/` (model, network, repository), `di/`, `ui/` (auth, dashboard, workouts, diets, classes, centers, aichat, qr, profile).
 - 📄 `kotlin/app/src/main/java/com/meta_force/meta_force/di/NetworkModule.kt` — `BASE_URL` apuntando al backend desplegado.
 
@@ -305,7 +305,7 @@ mindmap
 **Objetivos del módulo cubiertos**
 
 - Servicios concurrentes y procesos **serverless en Deno** (Edge Functions de Supabase): autenticación, escaneo QR, generación de PDFs, envío de emails, importación masiva, IA, eventos de rendimiento, *health checks*…
-- **11 Edge Functions desplegadas** en [`back/supabase/functions/`](../back/supabase/functions/): `auth-register`, `auth-change-password`, `admin-signout`, `admin-analytics`, `access-scan`, `qr-sign`, `bulk-import`, `migrate-legacy-users`, `invoice-pdf`, `subscription-email`, `ai-chat`, `ai-save-plan`, `ai-sessions`, `create-ticket`, `machines-create`, `performance-events`, `health`.
+- **11 Edge Functions desplegadas** en [`back/supabase/functions/`](https://github.com/Mariogarluu/Meta_Force_back/tree/main/supabase/functions): `auth-register`, `auth-change-password`, `admin-signout`, `admin-analytics`, `access-scan`, `qr-sign`, `bulk-import`, `migrate-legacy-users`, `invoice-pdf`, `subscription-email`, `ai-chat`, `ai-save-plan`, `ai-sessions`, `create-ticket`, `machines-create`, `performance-events`, `health`.
 - **Procesos largos** (importación masiva, ETL analítico) ejecutados como tareas Python/Node fuera del request HTTP (`back/scripts/seed-from-json.mjs`, `back/analytics/extract_data.py`).
 - **Hilos / coroutines** en la app Kotlin (Coroutines + StateFlow) y **operadores reactivos** con RxJS en Angular.
 - **Rate limiting** en el histórico Express (`express-rate-limit`) y en Edge (helper `back/supabase/functions/_shared/rate-limit.ts`).
@@ -328,7 +328,7 @@ mindmap
 
 **Objetivos del módulo cubiertos**
 
-- **SPA Angular 19.2 standalone components** con routing, guards (`auth`, `guest`, `role`) e interceptores HTTP en [`front/`](../front/).
+- **SPA Angular 19.2 standalone components** con routing, guards (`auth`, `guest`, `role`) e interceptores HTTP en [`front/`](https://github.com/Mariogarluu/Meta_Force_front/tree/main/).
 - **Diseño responsive y accesible** con **Tailwind CSS 3.4**, modo claro/oscuro persistente y tipografía / paleta coherente.
 - **Internacionalización (i18n)** con `ngx-translate` en tres idiomas: ES, EN, FR (`front/public/assets/i18n/`).
 - **Componentes reutilizables**: `navbar`, `footer`, `language-selector`, `theme-toggle`, `profile-image-manager`, `error-toast`.
@@ -435,7 +435,7 @@ mindmap
 | Frontend web | [`Mariogarluu/Meta_Force_front`](https://github.com/Mariogarluu/Meta_Force_front) | Angular 19 · TypeScript 5.7 · Tailwind 3.4 · ngx-translate · Supabase JS |
 | Backend (Supabase + histórico Express) | [`Mariogarluu/Meta_Force_back`](https://github.com/Mariogarluu/Meta_Force_back) | Supabase (PostgreSQL · Edge Functions Deno · Auth · Storage) · Prisma · Express 5 |
 | App Android | [`Mariogarluu/Meta_Force_kotlin`](https://github.com/Mariogarluu/Meta_Force_kotlin) | Kotlin 2.0 · Jetpack Compose · Hilt · Retrofit · DataStore |
-| Analítica BI | Carpeta [`back/analytics/`](../back/analytics/) en el repo de backend | Python · Pandas · `supabase-py` · Power BI |
+| Analítica BI | Carpeta [`back/analytics/`](https://github.com/Mariogarluu/Meta_Force_back/tree/main/analytics) en el repo de backend | Python · Pandas · `supabase-py` · Power BI |
 
 > Cada capa se desarrolla y despliega de forma **independiente** desde su propio repositorio: los tres repos anteriores son la fuente de verdad.
 
@@ -495,7 +495,7 @@ El espacio de documentación del proyecto vive en Confluence:
 
 ## Documentación de código (Compodoc)
 
-La documentación técnica del frontend Angular se genera con **Compodoc** y queda versionada en el directorio [`front/documentation/`](../front/documentation/) del repositorio de frontend.
+La documentación técnica del frontend Angular se genera con **Compodoc** y queda versionada en el directorio [`front/documentation/`](https://github.com/Mariogarluu/Meta_Force_front/tree/main/documentation) del repositorio de frontend.
 
 - Genera la documentación:
 
@@ -676,7 +676,7 @@ flowchart LR
     class ETL,CSV,PBIX bi
 ```
 
-> Detalle completo: [`back/docs/ARCHITECTURE.md`](../back/docs/ARCHITECTURE.md) y [`front/docs/FE-ARCHITECTURE.md`](../front/docs/FE-ARCHITECTURE.md).
+> Detalle completo: [`back/docs/ARCHITECTURE.md`](https://github.com/Mariogarluu/Meta_Force_back/blob/main/docs/ARCHITECTURE.md) y [`front/docs/FE-ARCHITECTURE.md`](https://github.com/Mariogarluu/Meta_Force_front/blob/main/docs/FE-ARCHITECTURE.md).
 
 ### Modelo de datos (ERD)
 
@@ -1081,7 +1081,7 @@ Tabla diseñada para que **el tribunal** localice rápidamente las evidencias de
 | 5 | **Dificultad técnica e implementación** (arquitectura, integraciones, despliegue, calidad, CI/CD, seguridad) | Migración real Express→Supabase (`back/docs/MIGRATION_DECISIONS.md`), 34 tablas con RLS al 100 %, 17 Edge Functions Deno, JWT con *custom access token hook*, QR firmado con JWT corto, facturación con numeración fiscal estable, ETL Python a Power BI. Ver [Arquitectura](#arquitectura-y-diagrama-general) y [El proyecto en cifras](#el-proyecto-en-cifras-producción). |
 | 6 | **Calidad de la documentación** (README según guía, PDF unificado, trazabilidad módulo↔evidencias, enlaces/imágenes válidos) | Este `readme/README.md` cumple la guía punto por punto: índice, equipo, descripción + imágenes referenciadas con rutas relativas, [subapartado por cada módulo con evidencias enlazadas](#aportación-del-proyecto-por-módulo), enlaces a repos, producción, Confluence, Jira, Compodoc. |
 | 7 | **Gestión de proyecto (Jira)** (alcance, epics, reparto, estado de tareas; coherencia con entregable) | Proyecto Jira `SCRUM` (`https://meta-force.atlassian.net`), 3 épicas con responsables claros (SCRUM-2, SCRUM-65, SCRUM-147), hasta `SCRUM-180`, tipos custom para módulo Android. PDF resumen pendiente. Ver [Gestión del proyecto (Jira)](#gestión-del-proyecto-jira). |
-| 8 | **Documentación de código (Compodoc)** (cobertura útil, servidor accesible, utilidad para revisor externo) | Compodoc ya generado en [`front/documentation/`](../front/documentation/) (index, modules, routes, coverage). URL pública del servidor pendiente. Ver [Documentación de código (Compodoc)](#documentación-de-código-compodoc). |
+| 8 | **Documentación de código (Compodoc)** (cobertura útil, servidor accesible, utilidad para revisor externo) | Compodoc ya generado en [`front/documentation/`](https://github.com/Mariogarluu/Meta_Force_front/tree/main/documentation) (index, modules, routes, coverage). URL pública del servidor pendiente. Ver [Documentación de código (Compodoc)](#documentación-de-código-compodoc). |
 | 9 | **Integración multi-módulo** (cómo encajan AD, PSP/PMDM, DI, Servidores, SGE, EIE; honestidad sobre límites) | Una subsección por módulo con objetivos cubiertos, evidencias y limitaciones / líneas futuras. Ver [Aportación del proyecto por módulo](#aportación-del-proyecto-por-módulo) — incluye **AD**, **PMDM**, **PSP**, **DI**, **SyA**, **SGE** y **EIE II** (Lean Canvas). |
 | 10 | **Originalidad y valor del producto** (más allá de un CRUD genérico) | Diferenciales documentados en [Resumen del proyecto](#resumen-del-proyecto) y [Diferencial frente a un CRUD genérico](#diferencial-frente-a-un-crud-genérico): QR firmado JWT, facturación SaaS real, IA conversacional con persistencia, dashboard Power BI ejecutivo, app multi-plataforma. |
 | 11 | **Trabajo en equipo** (coordinación commits/Jira/README; narrativa conjunta) | Equipo de 3 con roles diferenciados (ver [Equipo](#equipo)), 3 épicas Jira con owner explícito (uno por persona), commits visibles en cada repo. Reparto detallado por persona pendiente *(ver [Información que falta](#información-que-falta-por-aportar))*. |
