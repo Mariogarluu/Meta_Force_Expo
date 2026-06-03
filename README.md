@@ -51,9 +51,9 @@
 
 | Foto | Nombre completo | Correo educaAnd | Rol principal | GitHub |
 |------|-----------------|------------------|---------------|--------|
-| 🧑‍💻 | **Mario García Luque** | [mgarluq1102@g.educaand.es](mailto:mgarluq1102@g.educaand.es) | Tech lead · Backend Supabase, Edge Functions, RLS, CI/CD, analítica, app Kotlin | [@Mariogarluu](https://github.com/Mariogarluu) |
-| 🧑‍💻 | **Salvador Bueno González** | [sbuegon0702@g.educaand.es](mailto:sbuegon0702@g.educaand.es) | Frontend Angular — maquetación, dashboard, i18n, temas | [@sbuegonz00](https://github.com/sbuegonz00) |
-| 🧑‍💻 | **Samuel García Ruiz** | [sgarrui1201@g.educaand.es](mailto:sgarrui1201@g.educaand.es) | Frontend Angular — historias de usuario, gestión de centros / clases | [@sgarrui1201](https://github.com/sgarrui1201) |
+| 🧑‍💻 | **Mario García Luque** | [mgarluq1102@g.educaand.es](mailto:mgarluq1102@g.educaand.es) | Tech Lead · Arquitectura de Backend (Supabase, Edge Functions, Seguridad RLS), Pipelines CI/CD, ETL de Analítica (Python) y Dashboard Power BI | [@Mariogarluu](https://github.com/Mariogarluu) |
+| 🧑‍💻 | **Salvador Bueno González** | [sbuegon0702@g.educaand.es](mailto:sbuegon0702@g.educaand.es) | Frontend UI/UX Designer · Maquetación premium de vistas web, Dashboard interactivo Angular, Sistema de Temas (Claro/Oscuro), i18n y Componentes Shared | [@sbuegonz00](https://github.com/sbuegonz00) |
+| 🧑‍💻 | **Samuel García Ruiz** | [sgarrui1201@g.educaand.es](mailto:sgarrui1201@g.educaand.es) | Jira & CRUD Master · Desarrollo frontend de historias de usuario (centros, máquinas, clases), desarrollo principal de la App Android nativa (Kotlin, Compose, MVVM) e integraciones móviles | [@sgarrui1201](https://github.com/sgarrui1201) |
 
 Profesorado evaluador (5 de junio de 2026):
 
