@@ -250,7 +250,7 @@ mindmap
 **Objetivos del módulo cubiertos**
 
 - Modelado de datos relacional sobre PostgreSQL (Supabase).
-- Persistencia ORM con **Prisma 6.18** en el histórico Express y mantenida como *source of truth* declarativa: [`back/prisma/schema.prisma`](https://github.com/Mariogarluu/Meta_Force_back/blob/4add8fcd6c6a6e709a32c6957cdb85f269a2cf1c/prisma/schema.prisma) (histórico).
+- Persistencia ORM con **Prisma 6.18** en el histórico Express (retirado del repositorio tras la migración a Supabase; la definición declarativa fue sustituida por políticas y migraciones SQL directas).
 - Migraciones versionadas en **SQL puro** (Supabase) en [`back/supabase/migrations/`](https://github.com/Mariogarluu/Meta_Force_back/tree/main/supabase/migrations) (20+ migraciones aplicadas: triggers de `auth.users → public.profiles`, RLS, custom access token hook, RPC para duplicar entrenamientos, facturación, roles, *security advisors fixes*…).
 - Procedimientos almacenados / RPC para reordenar dietas y duplicar workouts ([`20260418104000_rpc_duplicate_workout_reorder_diet.sql`](https://github.com/Mariogarluu/Meta_Force_back/blob/main/supabase/migrations/20260418104000_rpc_duplicate_workout_reorder_diet.sql)).
 - Consumo desde múltiples clientes: Angular (Supabase JS), Kotlin/Retrofit (REST a Edge Functions), Python (`supabase-py` para ETL).
