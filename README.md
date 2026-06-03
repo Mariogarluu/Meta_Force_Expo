@@ -172,7 +172,7 @@ Las capturas en vivo del producto se almacenan en [`readme/img/`](./img/) y se i
 | 4 | Suscripciones y facturación (web) | [04-suscripciones.png](./readme/img/04-suscripciones.png) | ⏳ pendiente |
 | 5 | Lector / generador de QR (web + móvil) | [05-qr.png](./readme/img/05-qr.png) | ⏳ pendiente |
 | 6 | Chat con IA y planes (móvil) | [06-ai-chat.png](./readme/img/06-ai-chat.png) | ⏳ pendiente |
-| 7 | Dashboard Power BI (analytics) | [07-powerbi.png](./readme/img/07-powerbi.png) | ✅ disponible |
+| 7 | Dashboard Power BI (analytics) | [07-powerbi.png](./readme/img/07-powerbi.png) <br> [07-powerbi-usuario.png](./readme/img/07-powerbi-usuario.png) | ✅ disponible |
 | 8 | Diagrama de arquitectura | [08-arquitectura.png](./readme/img/08-arquitectura.png) | ⏳ pendiente |
 | 9 | Lean Canvas (EIE) | [09-lean-canvas.png](./readme/img/09-lean-canvas.png) | ⏳ pendiente |
 | — | Compodoc (front) | [`front/documentation/`](https://github.com/Mariogarluu/Meta_Force_front/tree/main/documentation) (`index.html`, `coverage.html`, `modules.html`, `routes.html`) | ✅ generado en repo |
