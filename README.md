@@ -167,12 +167,12 @@ Las capturas en vivo del producto se almacenan en [`readme/img/`](./img/) y se i
 | # | Vista | Origen | Estado |
 |---|-------|--------|--------|
 | 1 | Landing / login (web) | `readme/img/01-landing.png` | ⏳ pendiente |
-| 2 | Dashboard SUPERADMIN (web) | `readme/img/02-dashboard.png` | ⏳ pendiente |
+| 2 | Dashboard SUPERADMIN (web) | `readme/img/02-dashboard.png` | ✅ disponible |
 | 3 | Gestión de centros / máquinas (web) | `readme/img/03-centros.png` | ⏳ pendiente |
 | 4 | Suscripciones y facturación (web) | `readme/img/04-suscripciones.png` | ⏳ pendiente |
 | 5 | Lector / generador de QR (web + móvil) | `readme/img/05-qr.png` | ⏳ pendiente |
 | 6 | Chat con IA y planes (móvil) | `readme/img/06-ai-chat.png` | ⏳ pendiente |
-| 7 | Dashboard Power BI (analytics) | `readme/img/07-powerbi.png` | ⏳ pendiente |
+| 7 | Dashboard Power BI (analytics) | `readme/img/07-powerbi.png` | ✅ disponible |
 | 8 | Diagrama de arquitectura | `readme/img/08-arquitectura.png` | ⏳ pendiente |
 | 9 | Lean Canvas (EIE) | `readme/img/09-lean-canvas.png` | ⏳ pendiente |
 | — | Compodoc (front) | [`front/documentation/`](https://github.com/Mariogarluu/Meta_Force_front/tree/main/documentation) (`index.html`, `coverage.html`, `modules.html`, `routes.html`) | ✅ generado en repo |
