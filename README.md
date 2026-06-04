@@ -10,6 +10,8 @@
 [![Frontend](https://img.shields.io/badge/Frontend-Angular_19-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://github.com/Mariogarluu/Meta_Force_front)
 [![Backend](https://img.shields.io/badge/Backend-Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://github.com/Mariogarluu/Meta_Force_back)
 [![Android](https://img.shields.io/badge/Android-Kotlin_2.0-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://github.com/Mariogarluu/Meta_Force_kotlin)
+[![Confluence](https://img.shields.io/badge/Documentation-Confluence-0052CC?style=for-the-badge&logo=confluence&logoColor=white)](https://meta-force.atlassian.net/wiki/spaces/MetaForce)
+[![Jira](https://img.shields.io/badge/Management-Jira-0052CC?style=for-the-badge&logo=jirasoftware&logoColor=white)](https://meta-force.atlassian.net)
 
 </div>
 
@@ -463,7 +465,7 @@ flowchart TD
 | **Web producción** | <https://meta-force-psi.vercel.app/> | Desplegada en Vercel. SPA con `vercel.json` reescrito para rutas Angular. |
 | **API Supabase** | `https://qybgnrlszozjhimewkel.supabase.co` | Edge Functions en `/functions/v1/<name>`. RLS activo. |
 | **App Android** | [Descargar APK (GitHub Releases)](https://github.com/Mariogarluu/Meta_Force_Expo/releases) | APK de depuración firmado (`app-debug.apk`) listo para descarga e instalación directa. |
-| **Compodoc** | `front/documentation/` | *Pendiente:* desplegar como sitio estático accesible durante la evaluación. |
+| **Compodoc** | <https://meta-force-psi.vercel.app/documentation/> | Servidor estático desplegado y accesible en producción durante la evaluación. |
 
 ### Credenciales de prueba para evaluación
 
@@ -475,34 +477,24 @@ SUPERADMIN   → email: metaforcegym@gmail.com    password: KirkTime67
 
 ---
 
-## Documentación unificada (Confluence)
+## Documentación unificada (Confluence) & Gestión (Jira)
 
-El espacio de documentación del proyecto vive en Confluence:
+El espacio de documentación del proyecto vive en Confluence y la gestión ágil en Jira Software:
 
-- **Espacio:** [Meta-Force (`MetaForce`)](https://meta-force.atlassian.net/wiki/spaces/MetaForce) (ID `196612`).
-- **Home del espacio:** [Meta-Force — Home](https://meta-force.atlassian.net/wiki/spaces/MetaForce/pages/196720/Meta-Force).
-- **Informe de migración Express → Supabase (SCRUM-138):** [enlace a Confluence](https://meta-force.atlassian.net/wiki/spaces/MetaForce/pages/10420225/Informe+migración+Express+→+Supabase+—+Sprint+actual+SCRUM-138+-+2026-04-25).
-
-📄 **PDF unificado de la documentación:** [Meta-Force_Confluence.pdf](readme/docs/Meta-Force_Confluence.pdf) (Generado e incorporado al repositorio).
-
-> El PDF consolida las páginas del espacio Confluence `MetaForce` (arquitectura, migraciones, decisiones técnicas, runbooks de seguridad ZAP, notas de release y el informe de hardening de roles).
+- **Confluence Space:** [Meta-Force (`MetaForce`)](https://meta-force.atlassian.net/wiki/spaces/MetaForce) (ID `196612`).
+- **Jira Project:** [SCRUM — meta-force](https://meta-force.atlassian.net) (Hasta `SCRUM-180`).
 
 ---
 
-## Gestión del proyecto (Jira)
+### 📂 Ficheros de Evidencias y Entregables del Proyecto
 
-- **Proyecto Jira:** `SCRUM` — *meta-force* en `https://meta-force.atlassian.net`.
-- **Última issue creada al cierre de esta documentación:** `SCRUM-180`.
-- **Épicas principales:**
-  - [`SCRUM-2` — Historias_Usuario](https://meta-force.atlassian.net/browse/SCRUM-2) — owner: Samuel García Ruiz.
-  - [`SCRUM-65` — Maquetación](https://meta-force.atlassian.net/browse/SCRUM-65) — owner: Salvador Bueno González.
-  - [`SCRUM-147` — Infraestructura y Ecosistema Meta-Force](https://meta-force.atlassian.net/browse/SCRUM-147) — owner: Mario García Luque.
-- **Tipos de issue usados:** Epic, Historia, Tarea, Subtarea, Error, *kotlin* (custom para el módulo Android).
-- **Iteraciones destacadas:** SCRUM-18 (suscripciones + facturación + QR firmado), SCRUM-138 (migración Express → Supabase), hardening de roles y RLS.
+Para facilitar la evaluación del tribunal, hemos consolidado y firmado los siguientes entregables PDF nativos directamente en el repositorio:
 
-📄 **PDF resumen de gestión Jira:** [Meta-Force_Jira.pdf](readme/docs/Meta-Force_Jira.pdf) (Generado e incorporado al repositorio).
-
-> El PDF incluye el alcance del proyecto, listado completo de épicas, tablero histórico con los 10 sprints ejecutados, reparto de tareas por miembro del equipo y gráficas vectoriales de avance y volumen de trabajo.
+| Icono | Entregable PDF | Origen / Herramienta | Descripción y Contenido Técnico |
+|:---:|:---|:---|:---|
+| 📄 | **[Meta-Force_Confluence.pdf](readme/docs/Meta-Force_Confluence.pdf)** | Confluence Cloud Space `MetaForce` | Consolidado completo del espacio: arquitectura, runbooks de ciberseguridad OWASP ZAP, decisiones de diseño de migración y **análisis de hardening de roles (ID 15040513)**. |
+| 📊 | **[Meta-Force_Jira.pdf](readme/docs/Meta-Force_Jira.pdf)** | Jira Software Project `SCRUM` | Historial exhaustivo de gestión: reparto de tareas por miembro, planificación de los 10 sprints y gráficas vectoriales de avance y volumen de trabajo. |
+| 🎨 | **[Meta-Force_Lean_Canvas.pdf](readme/docs/Meta-Force_Lean_Canvas.pdf)** | EIE II Canvas | Modelo de negocio SaaS B2C vectorizado y alineado con los KPIs financieros de Power BI. |
 
 ---
 
