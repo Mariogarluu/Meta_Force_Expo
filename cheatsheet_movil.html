@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta-Force | Cheat Sheet Móvil 📱</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --samuel: #58a6ff;
+      --salva: #ff7b72;
+      --mario: #d2a8ff;
+      --rescue-bg: rgba(88, 166, 255, 0.07);
+      --rescue-border: #58a6ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding: 12px 8px 40px 8px;
+      font-size: 17px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 16px;
+      padding: 8px 0;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      color: var(--text-bright);
+      margin-bottom: 4px;
+    }
+
+    .info-bar {
+      font-size: 0.8rem;
+      color: #8b949e;
+      margin-bottom: 12px;
+    }
+
+    /* Tabs Container */
+    .tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 20px;
+      position: sticky;
+      top: 0;
+      background-color: var(--bg);
+      padding: 8px 4px;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab-btn {
+      flex: 1;
+      background-color: #21262d;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 4px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn.active {
+      background-color: var(--card-bg);
+      border-color: #f0f6fc;
+      color: var(--text-bright);
+    }
+
+    .tab-btn.active.samuel-btn { border-color: var(--samuel); color: var(--samuel); }
+    .tab-btn.active.salva-btn { border-color: var(--salva); color: var(--salva); }
+    .tab-btn.active.mario-btn { border-color: var(--mario); color: var(--mario); }
+
+    /* Speaker Blocks */
+    .speaker-block {
+      display: none;
+    }
+
+    .speaker-block.active {
+      display: block;
+    }
+
+    /* Cards */
+    .slide-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .slide-num {
+      color: #8b949e;
+    }
+
+    .slide-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      color: var(--text-bright);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .rescue-section {
+      background-color: var(--rescue-bg);
+      border-left: 4px solid var(--rescue-border);
+      padding: 12px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 14px;
+    }
+
+    .rescue-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--rescue-border);
+      margin-bottom: 4px;
+    }
+
+    .rescue-text {
+      color: var(--text-bright);
+      font-size: 1.05rem;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    /* Key Terms Badge */
+    .badge-label {
+      font-size: 0.75rem;
+      color: #8b949e;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .badge {
+      background-color: rgba(240, 246, 252, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.8rem;
+      color: #8b949e;
+      font-weight: 500;
+    }
+
+    /* Colors by speaker */
+    .samuel-block .rescue-section {
+      background-color: rgba(88, 166, 255, 0.07);
+      border-left-color: var(--samuel);
+    }
+    .samuel-block .rescue-label { color: var(--samuel); }
+
+    .salva-block .rescue-section {
+      background-color: rgba(255, 123, 114, 0.07);
+      border-left-color: var(--salva);
+    }
+    .salva-block .rescue-label { color: var(--salva); }
+
+    .mario-block .rescue-section {
+      background-color: rgba(210, 168, 255, 0.07);
+      border-left-color: var(--mario);
+    }
+    .mario-block .rescue-label { color: var(--mario); }
+
+    /* Footer navigation hint */
+    .hint {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #8b949e;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meta-Force | Cheat Sheet Móvil 📱</h1>
+    <div class="info-bar">Toca un nombre para ver sus diapositivas y frases</div>
+  </header>
+
+  <!-- Sticky Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active samuel-btn" onclick="showSpeaker('samuel', this)">Samuel G.</button>
+    <button class="tab-btn salva-btn" onclick="showSpeaker('salva', this)">Salvador B.</button>
+    <button class="tab-btn mario-btn" onclick="showSpeaker('mario', this)">Mario G.</button>
+  </div>
+
+  <!-- SAMUEL -->
+  <div id="samuel" class="speaker-block active samuel-block">
+    
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 1</span>
+        <span class="slide-num" style="color: var(--samuel)">Portada</span>
+      </div>
+      <div class="slide-title">Meta-Force - Plataforma Integral</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Buenos días. Os presentamos Meta-Force, una plataforma integral en la nube diseñada para revolucionar la gestión deportiva y de fitness."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Grupo 5</span>
+        <span class="badge">Defensa Técnica</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 2</span>
+        <span class="slide-num" style="color: var(--samuel)">Concepto</span>
+      </div>
+      <div class="slide-title">Concepto Principal</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Es un ecosistema SaaS completo que conecta una aplicación web en Angular 19, una app nativa en Android con IA integrada, y un sistema de Business Intelligence."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">SaaS</span>
+        <span class="badge">Escalabilidad</span>
+        <span class="badge">Multidispositivo</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 3</span>
+        <span class="slide-num" style="color: var(--samuel)">Frontend</span>
+      </div>
+      <div class="slide-title">Portal Público (Web)</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Esta es la Landing Page pública de cara al cliente. Está desarrollada en Angular 19 con un diseño totalmente responsivo y flujos de login y registro seguros."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Angular 19</span>
+        <span class="badge">Standalone Components</span>
+        <span class="badge">Responsivo</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 4</span>
+        <span class="slide-num" style="color: var(--samuel)">Consola</span>
+      </div>
+      <div class="slide-title">Consola de Control Superadmin</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Al acceder como Superadmin, entramos a este panel de control interactivo donde se monitorizan ingresos, usuarios y aforos del negocio en tiempo real."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Angular Signals</span>
+        <span class="badge">Chart.js</span>
+        <span class="badge">Métricas</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 5</span>
+        <span class="slide-num" style="color: var(--samuel)">Operaciones</span>
+      </div>
+      <div class="slide-title">Gestión de Operaciones</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"El núcleo operativo de la plataforma permite gestionar los centros de forma multi-sucursal, catalogar clases y asignar instructores a horarios sin conflictos."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Multi-sucursal</span>
+        <span class="badge">Evitar Conflictos</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 6</span>
+        <span class="slide-num" style="color: var(--samuel)">Captura</span>
+      </div>
+      <div class="slide-title">Gestión de Centros (Captura)</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Aquí vemos la consola real de administración de centros y máquinas. Proporciona alertas visuales inmediatas para confirmar que las operaciones se guardan correctamente."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">CRUDs core</span>
+        <span class="badge">UX reactiva</span>
+        <span class="badge">Feedback visual</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SALVADOR -->
+  <div id="salva" class="speaker-block salva-block">
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 7</span>
+        <span class="slide-num" style="color: var(--salva)">Facturación</span>
+      </div>
+      <div class="slide-title">Suscripciones y Facturación (i18n)</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"La plataforma ofrece un sistema flexible de facturación internacionalizable, traducido nativamente al español, inglés y francés sin recargar la página."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">i18n</span>
+        <span class="badge">ngx-translate</span>
+        <span class="badge">ES, EN, FR</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 8</span>
+        <span class="slide-num" style="color: var(--salva)">Suscripciones</span>
+      </div>
+      <div class="slide-title">Planes y Facturación PDF</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"El portal de suscripciones permite adquirir planes y descargar facturas PDF que se generan en el servidor y se notifican por email de forma automatizada."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Supabase Storage</span>
+        <span class="badge">Edge Functions</span>
+        <span class="badge">Resend Email</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 9</span>
+        <span class="slide-num" style="color: var(--salva)">QR Web</span>
+      </div>
+      <div class="slide-title">Control de Accesos - Lector Web</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Para el personal de recepción, la plataforma web integra un lector de códigos QR que valida los accesos y actualiza el aforo del centro en tiempo real."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">html5-qrcode</span>
+        <span class="badge">Aforo tiempo real</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 10</span>
+        <span class="slide-num" style="color: var(--salva)">QR App</span>
+      </div>
+      <div class="slide-title">Control de Accesos - App Cliente</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Por su parte, el cliente genera códigos QR temporales firmados criptográficamente desde su app móvil, lo que impide el fraude y la suplantación de identidad."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">qr-sign</span>
+        <span class="badge">JWT corto encriptado</span>
+        <span class="badge">Seguridad física</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 11</span>
+        <span class="slide-num" style="color: var(--salva)">IA Entrenamientos</span>
+      </div>
+      <div class="slide-title">App Nativa - Chat IA Entrenamientos</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"La aplicación móvil está programada de forma nativa en Kotlin con Jetpack Compose. Destaca el asistente conversacional con IA para generar rutinas a medida."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Kotlin 2.0</span>
+        <span class="badge">Jetpack Compose</span>
+        <span class="badge">Llama 3 (Groq)</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 12</span>
+        <span class="slide-num" style="color: var(--salva)">IA Nutrición</span>
+      </div>
+      <div class="slide-title">App Nativa - Chat IA Nutrición</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"La IA también diseña dietas personalizadas analizando las marcas del usuario. Estos planes se guardan en su perfil en la nube y se cachean localmente para rendimiento."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">DataStore local</span>
+        <span class="badge">Persistencia</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 13</span>
+        <span class="slide-num" style="color: var(--salva)">BI Financiero</span>
+      </div>
+      <div class="slide-title">Business Intelligence - Panel Financiero</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Para la inteligencia de negocio, desarrollamos un script en Python que realiza un ETL limpio de base de datos para generar informes financieros avanzados."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Python ETL</span>
+        <span class="badge">Pandas</span>
+        <span class="badge">Métricas de ingresos</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 14</span>
+        <span class="slide-num" style="color: var(--salva)">BI Rendimiento</span>
+      </div>
+      <div class="slide-title">Business Intelligence - Rendimiento</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Este dashboard interactivo en Power BI analiza la retención, los planes más vendidos y las horas de mayor afluencia para optimizar los recursos del gimnasio."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Power BI</span>
+        <span class="badge">KPIs operativos</span>
+        <span class="badge">Ocupación salas</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MARIO -->
+  <div id="mario" class="speaker-block mario-block">
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 15</span>
+        <span class="slide-num" style="color: var(--mario)">Arquitectura</span>
+      </div>
+      <div class="slide-title">Arquitectura Física</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Esta es nuestra arquitectura técnica. Los clientes de Angular y Kotlin se comunican con Supabase a través de APIs REST y funciones serverless Deno en TypeScript."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">PostgreSQL</span>
+        <span class="badge">BaaS Supabase</span>
+        <span class="badge">Deno Edge Functions</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 16</span>
+        <span class="slide-num" style="color: var(--mario)">Viabilidad</span>
+      </div>
+      <div class="slide-title">Viabilidad Económica (Lean Canvas)</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Estructuramos el negocio bajo un modelo SaaS B2C. Estudiamos la viabilidad económica confrontando costes fijos en la nube con las tarifas recurrentes del servicio."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Lean Canvas</span>
+        <span class="badge">Viabilidad legal y RGPD</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 17</span>
+        <span class="slide-num" style="color: var(--mario)">Gestión</span>
+      </div>
+      <div class="slide-title">Gestión Ágil (Scrum)</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Para la organización del equipo utilizamos metodología ágil Scrum con sprints de dos semanas, coordinando el código en GitHub mediante ramas de características."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Scrum</span>
+        <span class="badge">GitHub Flow</span>
+        <span class="badge">Pull Requests</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 18</span>
+        <span class="slide-num" style="color: var(--mario)">Tablero Jira</span>
+      </div>
+      <div class="slide-title">Gestión del Proyecto - Tablero Jira</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"En esta captura de Jira Software se aprecia el backlog de tareas, que suma hasta 180 historias de usuario detalladas, estimadas y asignadas con total transparencia."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Estimación backlog</span>
+        <span class="badge">Trazabilidad sprints</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 19</span>
+        <span class="slide-num" style="color: var(--mario)">Seguridad</span>
+      </div>
+      <div class="slide-title">Seguridad de Datos</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"En seguridad, todas nuestras 34 tablas de base de datos tienen activas políticas RLS. Cada rol del sistema solo puede leer y escribir su propia información autorizada."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">RLS en 34/34 tablas</span>
+        <span class="badge">Custom access token hook</span>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="card-meta">
+        <span class="slide-num">Slide 20</span>
+        <span class="slide-num" style="color: var(--mario)">Fin</span>
+      </div>
+      <div class="slide-title">Conclusión y Cierre</div>
+      <div class="rescue-section">
+        <div class="rescue-label">Frase de Rescate</div>
+        <div class="rescue-text">"Meta-Force es una plataforma robusta, segura y completamente funcional en producción. Muchas gracias por su atención y abrimos el turno de preguntas."</div>
+      </div>
+      <div class="badge-label">Conceptos clave</div>
+      <div class="badge-list">
+        <span class="badge">Despliegue final</span>
+        <span class="badge">Agradecimientos</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hint">Guarda esta página en tus marcadores del móvil para verla en la defensa.</div>
+
+  <script>
+    function showSpeaker(speakerId, btn) {
+      // Hide all blocks
+      const blocks = document.querySelectorAll('.speaker-block');
+      blocks.forEach(block => block.classList.remove('active'));
+
+      // Deactivate all buttons
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(button => button.classList.remove('active'));
+
+      // Show target block
+      document.getElementById(speakerId).classList.add('active');
+
+      // Activate current button
+      btn.classList.add('active');
+
+      // Scroll to top of window to read comfortably
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
