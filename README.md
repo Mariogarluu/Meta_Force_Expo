@@ -498,6 +498,7 @@ Para facilitar la evaluación del tribunal, hemos consolidado y firmado los sigu
 | 📊 | **[Meta-Force_Jira.pdf](readme/docs/Meta-Force_Jira.pdf)** | Jira Software Project `SCRUM` | Historial exhaustivo de gestión: reparto de tareas por miembro, planificación de los 10 sprints y gráficas vectoriales de avance y volumen de trabajo. |
 | 🎨 | **[Meta-Force_Lean_Canvas.pdf](readme/docs/Meta-Force_Lean_Canvas.pdf)** | EIE II Canvas | Modelo de negocio SaaS B2C vectorizado y alineado con los KPIs financieros de Power BI. |
 | 📽️ | **[Google Slides de la Exposición](https://docs.google.com/presentation/d/16W0ntrzEmBVdwZdff1psD8CvXF8kLTndTo8bigQIyPM/edit?usp=sharing)** | Google Slides | Diapositivas oficiales utilizadas para la exposición de la defensa del proyecto (20 diapositivas reorganizadas). |
+| 📱 | **[Tarjetas de Apoyo (Cheat Sheet Móvil)](cheatsheet_movil.html)** | HTML Interactivo | Chuleta/guion optimizado para smartphones en modo oscuro para leer cómodamente durante la defensa. |
 
 ---
 
