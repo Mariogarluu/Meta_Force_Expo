@@ -492,7 +492,7 @@ Para facilitar la evaluación del tribunal, hemos consolidado y firmado los sigu
 
 | Icono | Entregable PDF | Origen / Herramienta | Descripción y Contenido Técnico |
 |:---:|:---|:---|:---|
-| 📄 | **[Meta-Force_Confluence.pdf](readme/docs/Meta-Force_Confluence.pdf)** | Confluence Cloud Space `MetaForce` | Consolidado completo del espacio: arquitectura, runbooks de ciberseguridad OWASP ZAP, decisiones de diseño de migración y **análisis de hardening de roles (ID 15040513)**. |
+| 📄 | **[Meta-Force_Confluence.pdf](readme/docs/Meta-Force_Confluence.pdf)** | Confluence Cloud Space `MetaForce` | Consolidado completo del espacio: arquitectura, runbooks de ciberseguridad ZAP, decisiones de migración, **hardening de roles (ID 15040513)**, **documentación técnica de Android (ID 23429121)** y **FAQ (ID 23461889)**. |
 | 📊 | **[Meta-Force_Jira.pdf](readme/docs/Meta-Force_Jira.pdf)** | Jira Software Project `SCRUM` | Historial exhaustivo de gestión: reparto de tareas por miembro, planificación de los 10 sprints y gráficas vectoriales de avance y volumen de trabajo. |
 | 🎨 | **[Meta-Force_Lean_Canvas.pdf](readme/docs/Meta-Force_Lean_Canvas.pdf)** | EIE II Canvas | Modelo de negocio SaaS B2C vectorizado y alineado con los KPIs financieros de Power BI. |
 
