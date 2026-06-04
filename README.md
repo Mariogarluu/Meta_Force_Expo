@@ -172,7 +172,7 @@ Las capturas en vivo del producto se almacenan en [`readme/img/`](./img/) y se i
 | 4 | Suscripciones y facturación (web) | [04-suscripciones.png](./readme/img/04-suscripciones.png) | ✅ disponible |
 | 5 | Lector / generador de QR (web + móvil) | [05-qr-web.png](./readme/img/05-qr-web.png) <br> [05-qr-app.png](./readme/img/05-qr-app.png) | ✅ disponible |
 | 6 | Chat con IA y planes (móvil) | [06-ai-chat-1.png](./readme/img/06-ai-chat-1.png) <br> [06-ai-chat-2.png](./readme/img/06-ai-chat-2.png) | ✅ disponible |
-| 7 | Dashboard Power BI (analytics) | [07-powerbi.png](./readme/img/07-powerbi.png) <br> [07-powerbi-usuario.png](./readme/img/07-powerbi-usuario.png) | ✅ disponible |
+| 7 | Dashboard Power BI (analytics) | [07-powerbi-1.png](./readme/img/07-powerbi-1.png) <br> [07-powerbi-2.png](./readme/img/07-powerbi-2.png) | ✅ disponible |
 | 8 | Diagrama de arquitectura | [08-arquitectura.png](./readme/img/08-arquitectura.png) | ✅ disponible |
 | 9 | Lean Canvas (EIE) | [09-lean-canvas.png](./readme/img/09-lean-canvas.png) | ✅ disponible |
 | 10 | Tablero de Jira (Gestión) | [10-jira.png](./readme/img/10-jira.png) | ✅ disponible |
