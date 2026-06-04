@@ -12,6 +12,7 @@
 [![Android](https://img.shields.io/badge/Android-Kotlin_2.0-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://github.com/Mariogarluu/Meta_Force_kotlin)
 [![Confluence](https://img.shields.io/badge/Documentation-Confluence-0052CC?style=for-the-badge&logo=confluence&logoColor=white)](https://meta-force.atlassian.net/wiki/spaces/MetaForce)
 [![Jira](https://img.shields.io/badge/Management-Jira-0052CC?style=for-the-badge&logo=jirasoftware&logoColor=white)](https://meta-force.atlassian.net)
+[![Diapositivas](https://img.shields.io/badge/Diapositivas-Google_Slides-orange?style=for-the-badge&logo=googleslides&logoColor=white)](https://docs.google.com/presentation/d/16W0ntrzEmBVdwZdff1psD8CvXF8kLTndTo8bigQIyPM/edit?usp=sharing)
 
 </div>
 
@@ -466,6 +467,7 @@ flowchart TD
 | **API Supabase** | `https://qybgnrlszozjhimewkel.supabase.co` | Edge Functions en `/functions/v1/<name>`. RLS activo. |
 | **App Android** | [Descargar APK (GitHub Releases)](https://github.com/Mariogarluu/Meta_Force_Expo/releases) | APK de depuración firmado (`app-debug.apk`) listo para descarga e instalación directa. |
 | **Compodoc** | <https://meta-force-psi.vercel.app/documentation/> | Servidor estático desplegado y accesible en producción durante la evaluación. |
+| **Diapositivas** | [Google Slides (Presentación)](https://docs.google.com/presentation/d/16W0ntrzEmBVdwZdff1psD8CvXF8kLTndTo8bigQIyPM/edit?usp=sharing) | Diapositivas oficiales y reestructuradas preparadas para la defensa del proyecto ante el tribunal. |
 
 ### Credenciales de prueba para evaluación
 
@@ -495,6 +497,7 @@ Para facilitar la evaluación del tribunal, hemos consolidado y firmado los sigu
 | 📄 | **[Meta-Force_Confluence.pdf](readme/docs/Meta-Force_Confluence.pdf)** | Confluence Cloud Space `MetaForce` | Consolidado completo del espacio: arquitectura, runbooks de ciberseguridad ZAP, decisiones de migración, **hardening de roles (ID 15040513)**, **documentación técnica de Android (ID 23429121)** y **FAQ (ID 23461889)**. |
 | 📊 | **[Meta-Force_Jira.pdf](readme/docs/Meta-Force_Jira.pdf)** | Jira Software Project `SCRUM` | Historial exhaustivo de gestión: reparto de tareas por miembro, planificación de los 10 sprints y gráficas vectoriales de avance y volumen de trabajo. |
 | 🎨 | **[Meta-Force_Lean_Canvas.pdf](readme/docs/Meta-Force_Lean_Canvas.pdf)** | EIE II Canvas | Modelo de negocio SaaS B2C vectorizado y alineado con los KPIs financieros de Power BI. |
+| 📽️ | **[Google Slides de la Exposición](https://docs.google.com/presentation/d/16W0ntrzEmBVdwZdff1psD8CvXF8kLTndTo8bigQIyPM/edit?usp=sharing)** | Google Slides | Diapositivas oficiales utilizadas para la exposición de la defensa del proyecto (20 diapositivas reorganizadas). |
 
 ---
 
