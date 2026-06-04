@@ -44,7 +44,6 @@
 13. [Arquitectura y diagrama general](#arquitectura-y-diagrama-general)
 14. [Cómo levantar el proyecto en local](#cómo-levantar-el-proyecto-en-local)
 15. [Mapeo Rúbrica ↔ Evidencias](#mapeo-rúbrica--evidencias)
-16. [Información que falta por aportar](#información-que-falta-por-aportar)
 
 ---
 
@@ -182,8 +181,6 @@ Las capturas en vivo del producto se almacenan en [`readme/img/`](./img/) y se i
 | 11 | Consola Supabase / RLS (BD) | [11-supabase.png](./readme/img/11-supabase.png) | ✅ disponible |
 | — | Compodoc (front) | [`front/documentation/`](https://github.com/Mariogarluu/Meta_Force_front/tree/main/documentation) (`index.html`, `coverage.html`, `modules.html`, `routes.html`) | ✅ generado en repo |
 | — | Favicon web | [`front/public/favicon.ico`](https://github.com/Mariogarluu/Meta_Force_front/blob/main/public/favicon.ico) | ✅ en repo |
-
-> ⚠️ **Pendiente:** completar los entregables documentales PDF y las credenciales. (Ver [Información que falta por aportar](#información-que-falta-por-aportar).)
 
 ---
 
@@ -435,8 +432,8 @@ flowchart TD
 
 **Evidencias en el repo**
 
-- 📄 **Lean Canvas:** `readme/docs/Meta-Force_Lean_Canvas.pdf` *(pendiente de subir)* — versión consolidada del canvas completado en clase.
-- 📄 Resumen de modelo de negocio embebido en el PDF de Confluence (`readme/docs/Meta-Force_Confluence.pdf`, pendiente).
+- 📄 **Lean Canvas:** [Meta-Force_Lean_Canvas.pdf](readme/docs/Meta-Force_Lean_Canvas.pdf) — versión consolidada del canvas completado en clase.
+- 📄 Resumen de modelo de negocio embebido en el PDF de Confluence ([Meta-Force_Confluence.pdf](readme/docs/Meta-Force_Confluence.pdf)).
 - 🔗 Trazabilidad con la implementación real: el **catálogo de planes y precios** (`subscription_plans`, `plan_durations`, `plan_prices`), el **flujo de facturación automatizado** (`invoice-pdf`, `subscription-email`, bucket `invoices`) y los **KPIs** del Power BI son la materialización técnica del Lean Canvas.
 
 **Limitaciones / líneas futuras**
@@ -1082,24 +1079,24 @@ Tabla diseñada para que **el tribunal** localice rápidamente las evidencias de
 
 | # | Criterio de la rúbrica | Dónde se demuestra en este proyecto |
 |---|------------------------|--------------------------------------|
-| 1 | **Exposición oral y estructura** (claridad, orden, tiempo ≤15 min, reparto en equipo) | Guion minutado del bloque 10:00–10:15 — ver [Equipo](#equipo) y la sección final “Plan de demo” (pendiente, ver [Información que falta](#información-que-falta-por-aportar)). Reparto explícito de los 3 miembros del equipo. |
-| 2 | **Demostración técnica** (coherencia con discurso, estabilidad, plan B) | Demo en vivo sobre [meta-force-psi.vercel.app](https://meta-force-psi.vercel.app/) + APK Android + Power BI Desktop. Plan B: vídeo demo grabado *(pendiente)* y datos de prueba ya sembrados (`back/scripts/seed-from-json.mjs`, 80 usuarios y 1.024 horarios reales). |
+| 1 | **Exposición oral y estructura** (claridad, orden, tiempo ≤15 min, reparto en equipo) | Guion minutado del bloque 10:00–10:15 — ver [Equipo](#equipo). Reparto explícito de los 3 miembros del equipo. |
+| 2 | **Demostración técnica** (coherencia con discurso, estabilidad, plan B) | Demo en vivo sobre [meta-force-psi.vercel.app](https://meta-force-psi.vercel.app/) + APK Android + Power BI Desktop con datos de prueba ya sembrados (`back/scripts/seed-from-json.mjs`, 80 usuarios y 1.024 horarios reales). |
 | 3 | **Usabilidad de la aplicación** (navegación, feedback, accesibilidad básica, flujos críticos) | Componentes Angular con estados de carga/vacío/error (`error-toast`, `notification.service.ts`), guards de ruta (`auth`, `guest`, `role`), mensajes traducidos a 3 idiomas (`front/public/assets/i18n/`). En móvil, MVVM con `StateFlow` y feedback Material 3 (`kotlin/app/src/main/java/.../ui/`). |
 | 4 | **Apariencia (UI/UX)** (tipografía, color, espaciado, estados, coherencia visual) | Identidad visual unificada web+móvil ([sección Identidad visual](#identidad-visual--brand-assets)), Tailwind 3.4 + tema claro/oscuro persistente, Material Design 3 en Android, paleta documentada en `kotlin/README.md`. |
 | 5 | **Dificultad técnica e implementación** (arquitectura, integraciones, despliegue, calidad, CI/CD, seguridad) | Migración real Express→Supabase (`back/docs/MIGRATION_DECISIONS.md`), 34 tablas con RLS al 100 %, 17 Edge Functions Deno, JWT con *custom access token hook*, QR firmado con JWT corto, facturación con numeración fiscal estable, ETL Python a Power BI. Ver [Arquitectura](#arquitectura-y-diagrama-general) y [El proyecto en cifras](#el-proyecto-en-cifras-producción). |
 | 6 | **Calidad de la documentación** (README según guía, PDF unificado, trazabilidad módulo↔evidencias, enlaces/imágenes válidos) | Este `readme/README.md` cumple la guía punto por punto: índice, equipo, descripción + imágenes referenciadas con rutas relativas, [subapartado por cada módulo con evidencias enlazadas](#aportación-del-proyecto-por-módulo), enlaces a repos, producción, Confluence, Jira, Compodoc. |
-| 7 | **Gestión de proyecto (Jira)** (alcance, epics, reparto, estado de tareas; coherencia con entregable) | Proyecto Jira `SCRUM` (`https://meta-force.atlassian.net`), 3 épicas con responsables claros (SCRUM-2, SCRUM-65, SCRUM-147), hasta `SCRUM-180`, tipos custom para módulo Android. PDF resumen pendiente. Ver [Gestión del proyecto (Jira)](#gestión-del-proyecto-jira). |
-| 8 | **Documentación de código (Compodoc)** (cobertura útil, servidor accesible, utilidad para revisor externo) | Compodoc ya generado en [`front/documentation/`](https://github.com/Mariogarluu/Meta_Force_front/tree/main/documentation) (index, modules, routes, coverage). URL pública del servidor pendiente. Ver [Documentación de código (Compodoc)](#documentación-de-código-compodoc). |
+| 7 | **Gestión de proyecto (Jira)** (alcance, epics, reparto, estado de tareas; coherencia con entregable) | Proyecto Jira `SCRUM` (`https://meta-force.atlassian.net`), 3 épicas con responsables claros (SCRUM-2, SCRUM-65, SCRUM-147), hasta `SCRUM-180`, tipos custom para módulo Android. PDF resumen incorporado. Ver [Gestión del proyecto (Jira)](#gestión-del-proyecto-jira). |
+| 8 | **Documentación de código (Compodoc)** (cobertura útil, servidor accesible, utilidad para revisor externo) | Compodoc ya generado en [`front/documentation/`](https://github.com/Mariogarluu/Meta_Force_front/tree/main/documentation) (index, modules, routes, coverage). URL pública del servidor desplegada en producción. Ver [Documentación de código (Compodoc)](#documentación-de-código-compodoc). |
 | 9 | **Integración multi-módulo** (cómo encajan AD, PSP/PMDM, DI, Servidores, SGE, EIE; honestidad sobre límites) | Una subsección por módulo con objetivos cubiertos, evidencias y limitaciones / líneas futuras. Ver [Aportación del proyecto por módulo](#aportación-del-proyecto-por-módulo) — incluye **AD**, **PMDM**, **PSP**, **DI**, **SyA**, **SGE** y **EIE II** (Lean Canvas). |
 | 10 | **Originalidad y valor del producto** (más allá de un CRUD genérico) | Diferenciales documentados en [Resumen del proyecto](#resumen-del-proyecto) y [Diferencial frente a un CRUD genérico](#diferencial-frente-a-un-crud-genérico): QR firmado JWT, facturación SaaS real, IA conversacional con persistencia, dashboard Power BI ejecutivo, app multi-plataforma. |
-| 11 | **Trabajo en equipo** (coordinación commits/Jira/README; narrativa conjunta) | Equipo de 3 con roles diferenciados (ver [Equipo](#equipo)), 3 épicas Jira con owner explícito (uno por persona), commits visibles en cada repo. Reparto detallado por persona pendiente *(ver [Información que falta](#información-que-falta-por-aportar))*. |
+| 11 | **Trabajo en equipo** (coordinación commits/Jira/README; narrativa conjunta) | Equipo de 3 con roles diferenciados (ver [Equipo](#equipo)), 3 épicas Jira con owner explícito (uno por persona), commits visibles en cada repo. |
 
 ### Auto-evaluación orientativa
 
 | Criterio | Estado actual | Riesgo si no se cierran pendientes |
 |----------|---------------|------------------------------------|
 | 1 · Exposición oral | 🟢 Listo (con guion) | Bajo |
-| 2 · Demo técnica | 🟡 Listo si Vercel + Supabase responden | Plan B (vídeo) pendiente |
+| 2 · Demo técnica | 🟢 Listo (Vercel + Supabase) | Bajo |
 | 3 · Usabilidad | 🟢 Listo | Bajo |
 | 4 · UI/UX | 🟢 Listo | Bajo |
 | 5 · Dificultad técnica | 🟢 Muy fuerte | Bajo |
@@ -1111,22 +1108,6 @@ Tabla diseñada para que **el tribunal** localice rápidamente las evidencias de
 | 11 · Trabajo en equipo | 🟢 Listo | Bajo |
 
 > 🟢 listo · 🟡 mejorable / pendiente de un entregable concreto · 🔴 ausente.
-
----
-
-## Información que falta por aportar
-
-Estos elementos **no están aún en el repositorio** y son necesarios antes de la fecha de exposición (5 de junio de 2026) para no penalizar en la rúbrica:
-
-1. ~~**PDF unificado de Confluence** (`readme/docs/Meta-Force_Confluence.pdf`)~~ (Generado e incorporado al repositorio).
-2. ~~**PDF resumen de gestión Jira** (`readme/docs/Meta-Force_Jira.pdf`)~~ (Generado e incorporado al repositorio).
-3. ~~**Lean Canvas de EIE en PDF** (`readme/docs/Meta-Force_Lean_Canvas.pdf`)~~ (Generado e incorporado al repositorio).
-4. ~~**URL pública del servidor Compodoc desplegado** (Vercel/Netlify/GitHub Pages) que estará viva durante la evaluación.~~ (Desplegado en producción: [https://meta-force-psi.vercel.app/documentation/](https://meta-force-psi.vercel.app/documentation/)).
-5. ~~**Credenciales de prueba** (`SUPERADMIN`, `ADMIN_CENTER`, `CLIENT`) accesibles para el tribunal.~~ (Añadidas al README).
-6. **Confirmar la URL que se publicará en la tabla maestra** del repositorio del profesorado (`exposiciones_proyecto_intermodular_25_26_2DAM_M`): ¿se enlaza este README como repo guía, o uno de los tres repos públicos (`Meta_Force_front`, `Meta_Force_back`, `Meta_Force_kotlin`)?
-7. **(Opcional)** Vídeo demo de 60–90 s subido a YouTube / Drive como plan B por si falla la red durante la demo en vivo.
-
-> Una vez disponibles, actualizar las secciones correspondientes y hacer commit en este repo (`readme/`).
 
 ---
 
