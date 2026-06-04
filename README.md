@@ -193,58 +193,71 @@ Subapartado obligatorio por cada módulo (con objetivos cubiertos, evidencias en
 Visualización del criterio **“Integración multi-módulo”** de la rúbrica: cada rama es un módulo del ciclo y los hijos son las features concretas del proyecto que materializan sus competencias.
 
 ```mermaid
-mindmap
-  root((Meta Force<br/>2.º DAM))
-    AD · Acceso a datos
-      PostgreSQL + Prisma
-      Migraciones SQL versionadas
-      RLS en 34/34 tablas
-      RPCs (duplicate workout, reorder diet)
-      Custom token hook
-      Tests SQL (rls_catalog, role_isolation)
-    PMDM · Multimedia y móviles
-      App Android Kotlin 2.0
-      Jetpack Compose + Material 3
-      MVVM + Hilt
-      Retrofit + interceptor JWT
-      DataStore (sesión local)
-      QR generado en dispositivo
-      Coil + imágenes
-    PSP · Servicios y procesos
-      17 Edge Functions Deno
-      Coroutines + StateFlow
-      RxJS + Signals
-      Rate limiting
-      ETL Python en background
-      Resend / Cloudinary / Groq
-    DI · Desarrollo de interfaces
-      Angular 19 SPA standalone
-      Tailwind + tema dark/light
-      i18n ES · EN · FR
-      Angular Signals
-      Componentes shared reutilizables
-      Power BI dashboard Superadmin
-      Compodoc generado
-    SyA · Servidores y APIs
-      Supabase Cloud + Vercel
-      Swagger / OpenAPI
-      JWT + app_role claim
-      Helmet · CORS · Zod
-      Auditoría OWASP ZAP
-      Despliegue CI/CD
-    SGE · Sistemas de gestión empresarial
-      Catálogo planes/precios/duraciones
-      Facturación con snapshots
-      Numeración fiscal estable
-      Email automático Resend
-      ETL Python + Pandas
-      Power BI .pbix Superadmin
-    EIE · Empresa e Iniciativa
-      Lean Canvas
-      Segmentos y propuesta de valor
-      Modelo SaaS B2C
-      KPIs alineados con Power BI
-      Cumplimiento RGPD/LOPDGDD
+flowchart TD
+    Root["🎯 Meta Force<br/>2.º DAM"]
+    
+    Root --> AD["🗄️ AD · Acceso a Datos"]
+    AD --> AD1["PostgreSQL + Prisma"]
+    AD --> AD2["Migraciones SQL versionadas"]
+    AD --> AD3["RLS en 34/34 tablas"]
+    AD --> AD4["RPCs: duplicar workout, reordenar dieta"]
+    AD --> AD5["Custom token hook"]
+    AD --> AD6["Tests SQL: rls_catalog, role_isolation"]
+    
+    Root --> PMDM["📱 PMDM · Multimedia y Móviles"]
+    PMDM --> PMDM1["App Android Kotlin 2.0"]
+    PMDM --> PMDM2["Jetpack Compose + Material 3"]
+    PMDM --> PMDM3["MVVM + Hilt"]
+    PMDM --> PMDM4["Retrofit + interceptor JWT"]
+    PMDM --> PMDM5["DataStore: sesión local"]
+    PMDM --> PMDM6["QR generado en dispositivo"]
+    PMDM --> PMDM7["Coil + imágenes"]
+
+    Root --> PSP["⚡ PSP · Servicios y Procesos"]
+    PSP --> PSP1["17 Edge Functions Deno"]
+    PSP --> PSP2["Coroutines + StateFlow"]
+    PSP --> PSP3["RxJS + Signals"]
+    PSP --> PSP4["Rate limiting"]
+    PSP --> PSP5["ETL Python en background"]
+    PSP --> PSP6["Resend / Cloudinary / Groq AI"]
+
+    Root --> DI["🎨 DI · Desarrollo de Interfaces"]
+    DI --> DI1["Angular 19 SPA standalone"]
+    DI --> DI2["Tailwind + tema dark/light"]
+    DI --> DI3["i18n: ES · EN · FR"]
+    DI --> DI4["Angular Signals"]
+    DI --> DI5["Componentes shared reutilizables"]
+    DI --> DI6["Power BI dashboard Superadmin"]
+    DI --> DI7["Compodoc generado"]
+
+    Root --> SyA["🛡️ SyA · Servidores y APIs"]
+    SyA --> SyA1["Supabase Cloud + Vercel"]
+    SyA --> SyA2["Swagger / OpenAPI"]
+    SyA --> SyA3["JWT + app_role claim"]
+    SyA --> SyA4["Helmet · CORS · Zod"]
+    SyA --> SyA5["Auditoría OWASP ZAP"]
+    SyA --> SyA6["Despliegue CI/CD"]
+
+    Root --> SGE["📈 SGE · Sistemas de Gestión"]
+    SGE --> SGE1["Catálogo: planes/precios/duraciones"]
+    SGE --> SGE2["Facturación con snapshots"]
+    SGE --> SGE3["Numeración fiscal estable"]
+    SGE --> SGE4["Email automático Resend"]
+    SGE --> SGE5["ETL Python + Pandas"]
+    SGE --> SGE6["Power BI .pbix Superadmin"]
+
+    Root --> EIE["💼 EIE · Empresa e Iniciativa"]
+    EIE --> EIE1["Lean Canvas"]
+    EIE --> EIE2["Segmentos y propuesta de valor"]
+    EIE --> EIE3["Modelo SaaS B2C"]
+    EIE --> EIE4["KPIs alineados con Power BI"]
+    EIE --> EIE5["Cumplimiento RGPD/LOPDGDD"]
+
+    classDef default fill:#1F2937,stroke:#374151,color:#F3F4F6
+    classDef main fill:#10B981,stroke:#059669,color:#FFFFFF,font-weight:bold
+    classDef module fill:#1E3A8A,stroke:#3B82F6,color:#F3F4F6,font-weight:bold
+    class Root main
+    class AD,PMDM,PSP,DI,SyA,SGE,EIE module
 ```
 
 ### Acceso a datos — Juan Antonio García Gómez
