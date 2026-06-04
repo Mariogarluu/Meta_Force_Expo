@@ -467,12 +467,10 @@ flowchart TD
 
 ### Credenciales de prueba para evaluación
 
-> ⚠️ **Pendiente:** generar usuarios de prueba (SUPERADMIN, ADMIN_CENTER y CLIENT) y publicarlos aquí. (Ver [Información que falta por aportar](#información-que-falta-por-aportar).)
+> ℹ️ **Completado:** credenciales de prueba configuradas para la evaluación del tribunal.
 
 ```
-SUPERADMIN  → email: __PENDIENTE__   password: __PENDIENTE__
-ADMIN_CENTER → email: __PENDIENTE__  password: __PENDIENTE__
-CLIENT      → email: __PENDIENTE__   password: __PENDIENTE__
+SUPERADMIN   → email: metaforcegym@gmail.com    password: KirkTime67
 ```
 
 ---
@@ -485,9 +483,9 @@ El espacio de documentación del proyecto vive en Confluence:
 - **Home del espacio:** [Meta-Force — Home](https://meta-force.atlassian.net/wiki/spaces/MetaForce/pages/196720/Meta-Force).
 - **Informe de migración Express → Supabase (SCRUM-138):** [enlace a Confluence](https://meta-force.atlassian.net/wiki/spaces/MetaForce/pages/10420225/Informe+migración+Express+→+Supabase+—+Sprint+actual+SCRUM-138+-+2026-04-25).
 
-📄 **PDF unificado de la documentación:** `readme/docs/Meta-Force_Confluence.pdf` *(pendiente de generar y subir)*.
+📄 **PDF unificado de la documentación:** [Meta-Force_Confluence.pdf](readme/docs/Meta-Force_Confluence.pdf) (Generado e incorporado al repositorio).
 
-> El PDF debe consolidar las páginas del espacio Confluence `MetaForce` (arquitectura, migraciones, decisiones técnicas, runbooks de seguridad ZAP, notas de release).
+> El PDF consolida las páginas del espacio Confluence `MetaForce` (arquitectura, migraciones, decisiones técnicas, runbooks de seguridad ZAP, notas de release y el informe de hardening de roles).
 
 ---
 
@@ -502,9 +500,9 @@ El espacio de documentación del proyecto vive en Confluence:
 - **Tipos de issue usados:** Epic, Historia, Tarea, Subtarea, Error, *kotlin* (custom para el módulo Android).
 - **Iteraciones destacadas:** SCRUM-18 (suscripciones + facturación + QR firmado), SCRUM-138 (migración Express → Supabase), hardening de roles y RLS.
 
-📄 **PDF resumen de gestión Jira:** `readme/docs/Meta-Force_Jira.pdf` *(pendiente de generar y subir)*.
+📄 **PDF resumen de gestión Jira:** [Meta-Force_Jira.pdf](readme/docs/Meta-Force_Jira.pdf) (Generado e incorporado al repositorio).
 
-> El PDF debe incluir, como mínimo: alcance del proyecto, listado de épicas, tablero (To Do / In Progress / Done), reparto de tareas por persona (Mario, Salvador, Samuel), estado de cierre y *burndown* del sprint final.
+> El PDF incluye el alcance del proyecto, listado completo de épicas, tablero histórico con los 10 sprints ejecutados, reparto de tareas por miembro del equipo y gráficas vectoriales de avance y volumen de trabajo.
 
 ---
 
@@ -526,7 +524,7 @@ cd front
 npx @compodoc/compodoc -s -d documentation -r 8080
 ```
 
-- 🌐 **Servidor Compodoc desplegado:** *pendiente* (URL pública estable que estará activa durante el periodo de evaluación). Ver [Información que falta por aportar](#información-que-falta-por-aportar).
+- 🌐 **Servidor Compodoc desplegado:** [https://meta-force-psi.vercel.app/documentation/](https://meta-force-psi.vercel.app/documentation/) (URL pública estable y activa en producción).
 
 > Compodoc cubre componentes, módulos, servicios, guards, interceptores, rutas y *coverage* de comentarios JSDoc del frontend Angular.
 
@@ -1110,9 +1108,9 @@ Tabla diseñada para que **el tribunal** localice rápidamente las evidencias de
 | 3 · Usabilidad | 🟢 Listo | Bajo |
 | 4 · UI/UX | 🟢 Listo | Bajo |
 | 5 · Dificultad técnica | 🟢 Muy fuerte | Bajo |
-| 6 · Documentación | 🟡 Falta PDF unificado Confluence + capturas | Medio |
-| 7 · Jira | 🟡 Falta PDF resumen | Medio |
-| 8 · Compodoc | 🟡 Falta servidor desplegado | Medio (penaliza directo) |
+| 6 · Documentación | 🟢 Listo (PDF Confluence + capturas en README) | Bajo |
+| 7 · Jira | 🟢 Listo (PDF unificado Jira) | Bajo |
+| 8 · Compodoc | 🟢 Listo (URL de Vercel configurada) | Bajo |
 | 9 · Integración multi-módulo | 🟢 Listo | Bajo |
 | 10 · Originalidad | 🟢 Listo | Bajo |
 | 11 · Trabajo en equipo | 🟢 Listo | Bajo |
@@ -1125,11 +1123,11 @@ Tabla diseñada para que **el tribunal** localice rápidamente las evidencias de
 
 Estos elementos **no están aún en el repositorio** y son necesarios antes de la fecha de exposición (5 de junio de 2026) para no penalizar en la rúbrica:
 
-1. **PDF unificado de Confluence** (`readme/docs/Meta-Force_Confluence.pdf`) — exportar el espacio `MetaForce` o las páginas clave.
-2. **PDF resumen de gestión Jira** (`readme/docs/Meta-Force_Jira.pdf`) — debe incluir tablero, épicas, tareas por persona y *burndown* / cierre de sprint.
-3. **Lean Canvas de EIE en PDF** (`readme/docs/Meta-Force_Lean_Canvas.pdf`) — versión PDF final firmada/aprobada para subir al repo (la versión imagen ya está disponible en `09-lean-canvas.png`).
-4. **URL pública del servidor Compodoc desplegado** (Vercel/Netlify/GitHub Pages) que estará viva durante la evaluación.
-5. **Credenciales de prueba** (`SUPERADMIN`, `ADMIN_CENTER`, `CLIENT`) accesibles para el tribunal.
+1. ~~**PDF unificado de Confluence** (`readme/docs/Meta-Force_Confluence.pdf`)~~ (Generado e incorporado al repositorio).
+2. ~~**PDF resumen de gestión Jira** (`readme/docs/Meta-Force_Jira.pdf`)~~ (Generado e incorporado al repositorio).
+3. ~~**Lean Canvas de EIE en PDF** (`readme/docs/Meta-Force_Lean_Canvas.pdf`)~~ (Generado e incorporado al repositorio).
+4. ~~**URL pública del servidor Compodoc desplegado** (Vercel/Netlify/GitHub Pages) que estará viva durante la evaluación.~~ (Desplegado en producción: [https://meta-force-psi.vercel.app/documentation/](https://meta-force-psi.vercel.app/documentation/)).
+5. ~~**Credenciales de prueba** (`SUPERADMIN`, `ADMIN_CENTER`, `CLIENT`) accesibles para el tribunal.~~ (Añadidas al README).
 6. **Confirmar la URL que se publicará en la tabla maestra** del repositorio del profesorado (`exposiciones_proyecto_intermodular_25_26_2DAM_M`): ¿se enlaza este README como repo guía, o uno de los tres repos públicos (`Meta_Force_front`, `Meta_Force_back`, `Meta_Force_kotlin`)?
 7. **(Opcional)** Vídeo demo de 60–90 s subido a YouTube / Drive como plan B por si falla la red durante la demo en vivo.
 
