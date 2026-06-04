@@ -166,19 +166,21 @@ Las capturas en vivo del producto se almacenan en [`readme/img/`](./img/) y se i
 
 | # | Vista | Origen | Estado |
 |---|-------|--------|--------|
-| 1 | Landing / login (web) | [01-landing.png](./readme/img/01-landing.png) | ⏳ pendiente |
-| 2 | Dashboard SUPERADMIN (web) | [02-dashboard.png](./readme/img/02-dashboard.png) | ⏳ pendiente |
-| 3 | Gestión de centros / máquinas (web) | [03-centros.png](./readme/img/03-centros.png) | ⏳ pendiente |
-| 4 | Suscripciones y facturación (web) | [04-suscripciones.png](./readme/img/04-suscripciones.png) | ⏳ pendiente |
-| 5 | Lector / generador de QR (web + móvil) | [05-qr.png](./readme/img/05-qr.png) | ⏳ pendiente |
-| 6 | Chat con IA y planes (móvil) | [06-ai-chat.png](./readme/img/06-ai-chat.png) | ⏳ pendiente |
+| 1 | Landing / login (web) | [01-landing.png](./readme/img/01-landing.png) | ✅ disponible |
+| 2 | Dashboard SUPERADMIN (web) | [02-dashboard.png](./readme/img/02-dashboard.png) | ✅ disponible |
+| 3 | Gestión de centros / máquinas (web) | [03-centros.png](./readme/img/03-centros.png) | ✅ disponible |
+| 4 | Suscripciones y facturación (web) | [04-suscripciones.png](./readme/img/04-suscripciones.png) | ✅ disponible |
+| 5 | Lector / generador de QR (web + móvil) | [05-qr-web.png](./readme/img/05-qr-web.png) <br> [05-qr-app.png](./readme/img/05-qr-app.png) | ✅ disponible |
+| 6 | Chat con IA y planes (móvil) | [06-ai-chat-1.png](./readme/img/06-ai-chat-1.png) <br> [06-ai-chat-2.png](./readme/img/06-ai-chat-2.png) | ✅ disponible |
 | 7 | Dashboard Power BI (analytics) | [07-powerbi.png](./readme/img/07-powerbi.png) <br> [07-powerbi-usuario.png](./readme/img/07-powerbi-usuario.png) | ✅ disponible |
-| 8 | Diagrama de arquitectura | [08-arquitectura.png](./readme/img/08-arquitectura.png) | ⏳ pendiente |
-| 9 | Lean Canvas (EIE) | [09-lean-canvas.png](./readme/img/09-lean-canvas.png) | ⏳ pendiente |
+| 8 | Diagrama de arquitectura | [08-arquitectura.png](./readme/img/08-arquitectura.png) | ✅ disponible |
+| 9 | Lean Canvas (EIE) | [09-lean-canvas.png](./readme/img/09-lean-canvas.png) | ✅ disponible |
+| 10 | Tablero de Jira (Gestión) | [10-jira.png](./readme/img/10-jira.png) | ✅ disponible |
+| 11 | Consola Supabase / RLS (BD) | [11-supabase.png](./readme/img/11-supabase.png) | ✅ disponible |
 | — | Compodoc (front) | [`front/documentation/`](https://github.com/Mariogarluu/Meta_Force_front/tree/main/documentation) (`index.html`, `coverage.html`, `modules.html`, `routes.html`) | ✅ generado en repo |
 | — | Favicon web | [`front/public/favicon.ico`](https://github.com/Mariogarluu/Meta_Force_front/blob/main/public/favicon.ico) | ✅ en repo |
 
-> ⚠️ **Pendiente:** subir las capturas reales 1–9 al directorio `readme/img/`. (Ver [Información que falta por aportar](#información-que-falta-por-aportar).)
+> ⚠️ **Pendiente:** completar los entregables documentales PDF y las credenciales. (Ver [Información que falta por aportar](#información-que-falta-por-aportar).)
 
 ---
 
@@ -1110,15 +1112,13 @@ Tabla diseñada para que **el tribunal** localice rápidamente las evidencias de
 
 Estos elementos **no están aún en el repositorio** y son necesarios antes de la fecha de exposición (5 de junio de 2026) para no penalizar en la rúbrica:
 
-1. **Capturas del producto** en `readme/img/` (web, móvil, Power BI, diagrama de arquitectura). Mínimo 6 capturas referenciadas en la sección [Capturas y vistas del producto](#capturas-y-vistas-del-producto).
-2. **PDF unificado de Confluence** (`readme/docs/Meta-Force_Confluence.pdf`) — exportar el espacio `MetaForce` o las páginas clave.
-3. **PDF resumen de gestión Jira** (`readme/docs/Meta-Force_Jira.pdf`) — debe incluir tablero, épicas, tareas por persona y *burndown* / cierre de sprint.
-4. **Lean Canvas de EIE** (`readme/docs/Meta-Force_Lean_Canvas.pdf`) — versión final firmada/aprobada para subir al repo y mencionar en la exposición.
-5. **URL pública del servidor Compodoc desplegado** (Vercel/Netlify/GitHub Pages) que estará viva durante la evaluación.
-6. **Credenciales de prueba** (`SUPERADMIN`, `ADMIN_CENTER`, `CLIENT`) accesibles para el tribunal.
-7. **Diagrama de arquitectura en imagen** (PNG/SVG) en `readme/img/08-arquitectura.png` — el ASCII actual sirve como borrador.
-8. **Confirmar la URL que se publicará en la tabla maestra** del repositorio del profesorado (`exposiciones_proyecto_intermodular_25_26_2DAM_M`): ¿se enlaza este README como repo guía, o uno de los tres repos públicos (`Meta_Force_front`, `Meta_Force_back`, `Meta_Force_kotlin`)?
-9. **(Opcional)** Vídeo demo de 60–90 s subido a YouTube / Drive como plan B por si falla la red durante la demo en vivo.
+1. **PDF unificado de Confluence** (`readme/docs/Meta-Force_Confluence.pdf`) — exportar el espacio `MetaForce` o las páginas clave.
+2. **PDF resumen de gestión Jira** (`readme/docs/Meta-Force_Jira.pdf`) — debe incluir tablero, épicas, tareas por persona y *burndown* / cierre de sprint.
+3. **Lean Canvas de EIE en PDF** (`readme/docs/Meta-Force_Lean_Canvas.pdf`) — versión PDF final firmada/aprobada para subir al repo (la versión imagen ya está disponible en `09-lean-canvas.png`).
+4. **URL pública del servidor Compodoc desplegado** (Vercel/Netlify/GitHub Pages) que estará viva durante la evaluación.
+5. **Credenciales de prueba** (`SUPERADMIN`, `ADMIN_CENTER`, `CLIENT`) accesibles para el tribunal.
+6. **Confirmar la URL que se publicará en la tabla maestra** del repositorio del profesorado (`exposiciones_proyecto_intermodular_25_26_2DAM_M`): ¿se enlaza este README como repo guía, o uno de los tres repos públicos (`Meta_Force_front`, `Meta_Force_back`, `Meta_Force_kotlin`)?
+7. **(Opcional)** Vídeo demo de 60–90 s subido a YouTube / Drive como plan B por si falla la red durante la demo en vivo.
 
 > Una vez disponibles, actualizar las secciones correspondientes y hacer commit en este repo (`readme/`).
 
